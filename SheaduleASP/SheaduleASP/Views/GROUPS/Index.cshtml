@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SheaduleASP.GROUPS>
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Группы</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                <p>Номер группы</p>
+            </th>
+            <th>
+                <p>Факультет</p>
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GROUP_NUMBER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FACULTY.FACULTY_NAME)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id=item.GROUP_CODE }) |
+                @Html.ActionLink("Информация", "Details", new { id=item.GROUP_CODE }) |
+                @Html.ActionLink("Удалить", "Delete", new { id=item.GROUP_CODE })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

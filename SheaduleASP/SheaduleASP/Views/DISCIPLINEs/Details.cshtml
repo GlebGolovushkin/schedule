@@ -1,0 +1,34 @@
+﻿@model SheaduleASP.DISCIPLINE
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Информация предмета</title>
+</head>
+<body>
+    <div>
+        <h4>Предмет</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <p>Название дисциплины</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DISCIPLINE_NAME)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Редактировать", "Edit", new { id = Model.DISCIPLINE_CODE }) |
+        @Html.ActionLink("Вернуться к предметам", "Index")
+    </p>
+</body>
+</html>

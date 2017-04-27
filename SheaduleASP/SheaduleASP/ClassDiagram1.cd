@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SheaduleASP.Controllers.AUDITORIUMsController">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AUDITORIUMsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SheaduleASP.Startup">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\Startup.Auth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SheaduleASP.Controllers.DISCIPLINEsController">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\DISCIPLINEsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SheaduleASP.Controllers.GROUPSController">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\GROUPSController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SheaduleASP.Controllers.SheaduleController">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\SheaduleController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SheaduleASP.Controllers.TEACHERsController">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\TEACHERsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SheaduleASP.Controllers.TIMETABLEsController">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\TIMETABLEsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SheaduleASP.Models.Lesson">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAABAgAAgAAAgAAABAAAAAAIAAAAIAAASAAAAIABEAA=</HashCode>
+      <FileName>Models\Lesson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

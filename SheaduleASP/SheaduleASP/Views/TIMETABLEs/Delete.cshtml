@@ -1,0 +1,120 @@
+﻿@model SheaduleASP.TIMETABLE
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удаление</title>
+</head>
+<body>
+    <h3>Вы уверены что хотите удалить</h3>
+    <div>
+        <h4>Занятие</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <p>Курс</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.COURSE_CODE)
+            </dd>
+    
+            <dt>
+                <p>День недели</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.WEEK_NUMBER)
+            </dd>
+    
+            <dt>
+                <p>Кресты</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CROSSES)
+            </dd>
+    
+            <dt>
+                <p>Вид</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ACTIVITY.ACTIVITY_TYPE_NAME)
+            </dd>
+    
+            <dt>
+                <p>Здание</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AUDITORIUM.BUILDING)
+            </dd>
+    
+            <dt>
+                <p>Аудитория</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AUDITORIUM.AUDITORIUM_NUMBER)
+            </dd>
+    
+            <dt>
+                <p>Дисциплина</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DISCIPLINE.DISCIPLINE_NAME)
+            </dd>
+    
+            <dt>
+                <p>Группа</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GROUPS.GROUP_NUMBER)
+            </dd>
+    
+            <dt>
+                <p>Преподаватель</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TEACHER.TEACHER_NAME)
+            </dd>
+    
+            <dt>
+                <p>Время начала</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TIME.TIME_START)
+            </dd>
+    
+            <dt>
+                <p>День недели</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.WEEKDAY.WEEKDAY_NAME)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Вернуться к занятиям", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

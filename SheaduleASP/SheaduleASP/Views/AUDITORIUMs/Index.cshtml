@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AUDITORIUM>
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Аудитории</title>
+</head>
+<body>
+<p>
+    @Html.ActionLink("Добавить новую", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p>Здание</p>
+        </th>
+        <th>
+            <p>Вместимость</p>
+        </th>
+        <th>
+            <p>Номер аудитории</p>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BUILDING)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CAPACITY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AUDITORIUM_NUMBER)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new {id = item.AUDITORIUM_CODE}) |
+                @Html.ActionLink("Информация", "Details", new {id = item.AUDITORIUM_CODE}) |
+                @Html.ActionLink("Удалить", "Delete", new {id = item.AUDITORIUM_CODE})
+            </td>
+        </tr>
+    }
+
+</table>
+</body>
+</html>

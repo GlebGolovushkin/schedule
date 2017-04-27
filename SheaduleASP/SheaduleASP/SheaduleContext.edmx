@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище SheaduleModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACTIVITY">
+          <Key>
+            <PropertyRef Name="ACTIVITY_TYPE_CODE" />
+          </Key>
+          <Property Name="ACTIVITY_TYPE_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ACTIVITY_TYPE_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AUDITORIUM">
+          <Key>
+            <PropertyRef Name="AUDITORIUM_CODE" />
+          </Key>
+          <Property Name="AUDITORIUM_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BUILDING" Type="varchar" MaxLength="50" />
+          <Property Name="CAPACITY" Type="int" />
+          <Property Name="AUDITORIUM_NUMBER" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DISCIPLINE">
+          <Key>
+            <PropertyRef Name="DISCIPLINE_CODE" />
+          </Key>
+          <Property Name="DISCIPLINE_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DISCIPLINE_NAME" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FACULTY">
+          <Key>
+            <PropertyRef Name="FACULTY_CODE" />
+          </Key>
+          <Property Name="FACULTY_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FACULTY_NAME" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="GROUPS">
+          <Key>
+            <PropertyRef Name="GROUP_CODE" />
+          </Key>
+          <Property Name="GROUP_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FACULTY_CODE" Type="int" />
+          <Property Name="GROUP_NUMBER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TEACHER">
+          <Key>
+            <PropertyRef Name="TEACHER_CODE" />
+          </Key>
+          <Property Name="TEACHER_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEACHER_NAME" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TIME">
+          <Key>
+            <PropertyRef Name="TIME_CODE" />
+          </Key>
+          <Property Name="TIME_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIME_START" Type="varchar" MaxLength="50" />
+          <Property Name="TIME_END" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TIMETABLE">
+          <Key>
+            <PropertyRef Name="LESSON_CODE" />
+          </Key>
+          <Property Name="LESSON_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WEEKDAY_CODE" Type="int" />
+          <Property Name="COURSE_CODE" Type="int" />
+          <Property Name="GROUP_CODE" Type="int" />
+          <Property Name="TEACHER_CODE" Type="int" />
+          <Property Name="DISCIPLINE_CODE" Type="int" />
+          <Property Name="ACTIVITY_TYPE_CODE" Type="int" />
+          <Property Name="AUDITORIUM_CODE" Type="int" />
+          <Property Name="WEEK_NUMBER" Type="int" />
+          <Property Name="TIME_CODE" Type="int" />
+          <Property Name="CROSSES" Type="int" />
+        </EntityType>
+        <EntityType Name="WEEKDAY">
+          <Key>
+            <PropertyRef Name="WEEKDAY_CODE" />
+          </Key>
+          <Property Name="WEEKDAY_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WEEKDAY_NAME" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <Association Name="FK_GROUPS_FACULTY">
+          <End Role="FACULTY" Type="Self.FACULTY" Multiplicity="0..1" />
+          <End Role="GROUPS" Type="Self.GROUPS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FACULTY">
+              <PropertyRef Name="FACULTY_CODE" />
+            </Principal>
+            <Dependent Role="GROUPS">
+              <PropertyRef Name="FACULTY_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_ACTIVITY">
+          <End Role="ACTIVITY" Type="Self.ACTIVITY" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTIVITY">
+              <PropertyRef Name="ACTIVITY_TYPE_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="ACTIVITY_TYPE_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_AUDITORIUM">
+          <End Role="AUDITORIUM" Type="Self.AUDITORIUM" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AUDITORIUM">
+              <PropertyRef Name="AUDITORIUM_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="AUDITORIUM_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_DISCIPLINE">
+          <End Role="DISCIPLINE" Type="Self.DISCIPLINE" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DISCIPLINE">
+              <PropertyRef Name="DISCIPLINE_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="DISCIPLINE_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_GROUPS">
+          <End Role="GROUPS" Type="Self.GROUPS" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GROUPS">
+              <PropertyRef Name="GROUP_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="GROUP_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_TEACHER">
+          <End Role="TEACHER" Type="Self.TEACHER" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEACHER">
+              <PropertyRef Name="TEACHER_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="TEACHER_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_TIME">
+          <End Role="TIME" Type="Self.TIME" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIME">
+              <PropertyRef Name="TIME_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="TIME_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_WEEKDAY">
+          <End Role="WEEKDAY" Type="Self.WEEKDAY" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEEKDAY">
+              <PropertyRef Name="WEEKDAY_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="WEEKDAY_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище SheaduleModelContainer">
+          <EntitySet Name="ACTIVITY" EntityType="Self.ACTIVITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AUDITORIUM" EntityType="Self.AUDITORIUM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DISCIPLINE" EntityType="Self.DISCIPLINE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACULTY" EntityType="Self.FACULTY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GROUPS" EntityType="Self.GROUPS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEACHER" EntityType="Self.TEACHER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIME" EntityType="Self.TIME" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIMETABLE" EntityType="Self.TIMETABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WEEKDAY" EntityType="Self.WEEKDAY" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_GROUPS_FACULTY" Association="Self.FK_GROUPS_FACULTY">
+            <End Role="FACULTY" EntitySet="FACULTY" />
+            <End Role="GROUPS" EntitySet="GROUPS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_ACTIVITY" Association="Self.FK_TIMETABLE_ACTIVITY">
+            <End Role="ACTIVITY" EntitySet="ACTIVITY" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_AUDITORIUM" Association="Self.FK_TIMETABLE_AUDITORIUM">
+            <End Role="AUDITORIUM" EntitySet="AUDITORIUM" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_DISCIPLINE" Association="Self.FK_TIMETABLE_DISCIPLINE">
+            <End Role="DISCIPLINE" EntitySet="DISCIPLINE" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_GROUPS" Association="Self.FK_TIMETABLE_GROUPS">
+            <End Role="GROUPS" EntitySet="GROUPS" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_TEACHER" Association="Self.FK_TIMETABLE_TEACHER">
+            <End Role="TEACHER" EntitySet="TEACHER" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_TIME" Association="Self.FK_TIMETABLE_TIME">
+            <End Role="TIME" EntitySet="TIME" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_WEEKDAY" Association="Self.FK_TIMETABLE_WEEKDAY">
+            <End Role="WEEKDAY" EntitySet="WEEKDAY" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SheaduleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACTIVITY">
+          <Key>
+            <PropertyRef Name="ACTIVITY_TYPE_CODE" />
+          </Key>
+          <Property Name="ACTIVITY_TYPE_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ACTIVITY_TYPE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_ACTIVITY" FromRole="ACTIVITY" ToRole="TIMETABLE" />
+        </EntityType>
+        <EntityType Name="AUDITORIUM">
+          <Key>
+            <PropertyRef Name="AUDITORIUM_CODE" />
+          </Key>
+          <Property Name="AUDITORIUM_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BUILDING" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CAPACITY" Type="Int32" />
+          <Property Name="AUDITORIUM_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_AUDITORIUM" FromRole="AUDITORIUM" ToRole="TIMETABLE" />
+        </EntityType>
+        <EntityType Name="DISCIPLINE">
+          <Key>
+            <PropertyRef Name="DISCIPLINE_CODE" />
+          </Key>
+          <Property Name="DISCIPLINE_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DISCIPLINE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_DISCIPLINE" FromRole="DISCIPLINE" ToRole="TIMETABLE" />
+        </EntityType>
+        <EntityType Name="FACULTY">
+          <Key>
+            <PropertyRef Name="FACULTY_CODE" />
+          </Key>
+          <Property Name="FACULTY_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FACULTY_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GROUPS" Relationship="Self.FK_GROUPS_FACULTY" FromRole="FACULTY" ToRole="GROUPS" />
+        </EntityType>
+        <EntityType Name="GROUPS">
+          <Key>
+            <PropertyRef Name="GROUP_CODE" />
+          </Key>
+          <Property Name="GROUP_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FACULTY_CODE" Type="Int32" />
+          <Property Name="GROUP_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FACULTY" Relationship="Self.FK_GROUPS_FACULTY" FromRole="GROUPS" ToRole="FACULTY" />
+          <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_GROUPS" FromRole="GROUPS" ToRole="TIMETABLE" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TEACHER">
+          <Key>
+            <PropertyRef Name="TEACHER_CODE" />
+          </Key>
+          <Property Name="TEACHER_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEACHER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_TEACHER" FromRole="TEACHER" ToRole="TIMETABLE" />
+        </EntityType>
+        <EntityType Name="TIME">
+          <Key>
+            <PropertyRef Name="TIME_CODE" />
+          </Key>
+          <Property Name="TIME_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIME_START" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TIME_END" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_TIME" FromRole="TIME" ToRole="TIMETABLE" />
+        </EntityType>
+        <EntityType Name="TIMETABLE">
+          <Key>
+            <PropertyRef Name="LESSON_CODE" />
+          </Key>
+          <Property Name="LESSON_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WEEKDAY_CODE" Type="Int32" />
+          <Property Name="COURSE_CODE" Type="Int32" />
+          <Property Name="GROUP_CODE" Type="Int32" />
+          <Property Name="TEACHER_CODE" Type="Int32" />
+          <Property Name="DISCIPLINE_CODE" Type="Int32" />
+          <Property Name="ACTIVITY_TYPE_CODE" Type="Int32" />
+          <Property Name="AUDITORIUM_CODE" Type="Int32" />
+          <Property Name="WEEK_NUMBER" Type="Int32" />
+          <Property Name="TIME_CODE" Type="Int32" />
+          <Property Name="CROSSES" Type="Int32" />
+          <NavigationProperty Name="ACTIVITY" Relationship="Self.FK_TIMETABLE_ACTIVITY" FromRole="TIMETABLE" ToRole="ACTIVITY" />
+          <NavigationProperty Name="AUDITORIUM" Relationship="Self.FK_TIMETABLE_AUDITORIUM" FromRole="TIMETABLE" ToRole="AUDITORIUM" />
+          <NavigationProperty Name="DISCIPLINE" Relationship="Self.FK_TIMETABLE_DISCIPLINE" FromRole="TIMETABLE" ToRole="DISCIPLINE" />
+          <NavigationProperty Name="GROUPS" Relationship="Self.FK_TIMETABLE_GROUPS" FromRole="TIMETABLE" ToRole="GROUPS" />
+          <NavigationProperty Name="TEACHER" Relationship="Self.FK_TIMETABLE_TEACHER" FromRole="TIMETABLE" ToRole="TEACHER" />
+          <NavigationProperty Name="TIME" Relationship="Self.FK_TIMETABLE_TIME" FromRole="TIMETABLE" ToRole="TIME" />
+          <NavigationProperty Name="WEEKDAY" Relationship="Self.FK_TIMETABLE_WEEKDAY" FromRole="TIMETABLE" ToRole="WEEKDAY" />
+        </EntityType>
+        <EntityType Name="WEEKDAY">
+          <Key>
+            <PropertyRef Name="WEEKDAY_CODE" />
+          </Key>
+          <Property Name="WEEKDAY_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WEEKDAY_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_WEEKDAY" FromRole="WEEKDAY" ToRole="TIMETABLE" />
+        </EntityType>
+        <Association Name="FK_TIMETABLE_ACTIVITY">
+          <End Role="ACTIVITY" Type="Self.ACTIVITY" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTIVITY">
+              <PropertyRef Name="ACTIVITY_TYPE_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="ACTIVITY_TYPE_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_AUDITORIUM">
+          <End Role="AUDITORIUM" Type="Self.AUDITORIUM" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AUDITORIUM">
+              <PropertyRef Name="AUDITORIUM_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="AUDITORIUM_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_DISCIPLINE">
+          <End Role="DISCIPLINE" Type="Self.DISCIPLINE" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DISCIPLINE">
+              <PropertyRef Name="DISCIPLINE_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="DISCIPLINE_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GROUPS_FACULTY">
+          <End Role="FACULTY" Type="Self.FACULTY" Multiplicity="0..1" />
+          <End Role="GROUPS" Type="Self.GROUPS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FACULTY">
+              <PropertyRef Name="FACULTY_CODE" />
+            </Principal>
+            <Dependent Role="GROUPS">
+              <PropertyRef Name="FACULTY_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_GROUPS">
+          <End Role="GROUPS" Type="Self.GROUPS" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GROUPS">
+              <PropertyRef Name="GROUP_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="GROUP_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_TEACHER">
+          <End Role="TEACHER" Type="Self.TEACHER" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEACHER">
+              <PropertyRef Name="TEACHER_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="TEACHER_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_TIME">
+          <End Role="TIME" Type="Self.TIME" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIME">
+              <PropertyRef Name="TIME_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="TIME_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TIMETABLE_WEEKDAY">
+          <End Role="WEEKDAY" Type="Self.WEEKDAY" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WEEKDAY">
+              <PropertyRef Name="WEEKDAY_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="WEEKDAY_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SheaduleContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACTIVITY" EntityType="Self.ACTIVITY" />
+          <EntitySet Name="AUDITORIUM" EntityType="Self.AUDITORIUM" />
+          <EntitySet Name="DISCIPLINE" EntityType="Self.DISCIPLINE" />
+          <EntitySet Name="FACULTY" EntityType="Self.FACULTY" />
+          <EntitySet Name="GROUPS" EntityType="Self.GROUPS" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TEACHER" EntityType="Self.TEACHER" />
+          <EntitySet Name="TIME" EntityType="Self.TIME" />
+          <EntitySet Name="TIMETABLE" EntityType="Self.TIMETABLE" />
+          <EntitySet Name="WEEKDAY" EntityType="Self.WEEKDAY" />
+          <AssociationSet Name="FK_TIMETABLE_ACTIVITY" Association="Self.FK_TIMETABLE_ACTIVITY">
+            <End Role="ACTIVITY" EntitySet="ACTIVITY" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_AUDITORIUM" Association="Self.FK_TIMETABLE_AUDITORIUM">
+            <End Role="AUDITORIUM" EntitySet="AUDITORIUM" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_DISCIPLINE" Association="Self.FK_TIMETABLE_DISCIPLINE">
+            <End Role="DISCIPLINE" EntitySet="DISCIPLINE" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GROUPS_FACULTY" Association="Self.FK_GROUPS_FACULTY">
+            <End Role="FACULTY" EntitySet="FACULTY" />
+            <End Role="GROUPS" EntitySet="GROUPS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_GROUPS" Association="Self.FK_TIMETABLE_GROUPS">
+            <End Role="GROUPS" EntitySet="GROUPS" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_TEACHER" Association="Self.FK_TIMETABLE_TEACHER">
+            <End Role="TEACHER" EntitySet="TEACHER" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_TIME" Association="Self.FK_TIMETABLE_TIME">
+            <End Role="TIME" EntitySet="TIME" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_WEEKDAY" Association="Self.FK_TIMETABLE_WEEKDAY">
+            <End Role="WEEKDAY" EntitySet="WEEKDAY" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SheaduleModelContainer" CdmEntityContainer="SheaduleContext">
+          <EntitySetMapping Name="ACTIVITY">
+            <EntityTypeMapping TypeName="SheaduleModel.ACTIVITY">
+              <MappingFragment StoreEntitySet="ACTIVITY">
+                <ScalarProperty Name="ACTIVITY_TYPE_CODE" ColumnName="ACTIVITY_TYPE_CODE" />
+                <ScalarProperty Name="ACTIVITY_TYPE_NAME" ColumnName="ACTIVITY_TYPE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AUDITORIUM">
+            <EntityTypeMapping TypeName="SheaduleModel.AUDITORIUM">
+              <MappingFragment StoreEntitySet="AUDITORIUM">
+                <ScalarProperty Name="AUDITORIUM_CODE" ColumnName="AUDITORIUM_CODE" />
+                <ScalarProperty Name="BUILDING" ColumnName="BUILDING" />
+                <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+                <ScalarProperty Name="AUDITORIUM_NUMBER" ColumnName="AUDITORIUM_NUMBER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DISCIPLINE">
+            <EntityTypeMapping TypeName="SheaduleModel.DISCIPLINE">
+              <MappingFragment StoreEntitySet="DISCIPLINE">
+                <ScalarProperty Name="DISCIPLINE_CODE" ColumnName="DISCIPLINE_CODE" />
+                <ScalarProperty Name="DISCIPLINE_NAME" ColumnName="DISCIPLINE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACULTY">
+            <EntityTypeMapping TypeName="SheaduleModel.FACULTY">
+              <MappingFragment StoreEntitySet="FACULTY">
+                <ScalarProperty Name="FACULTY_CODE" ColumnName="FACULTY_CODE" />
+                <ScalarProperty Name="FACULTY_NAME" ColumnName="FACULTY_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GROUPS">
+            <EntityTypeMapping TypeName="SheaduleModel.GROUPS">
+              <MappingFragment StoreEntitySet="GROUPS">
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="FACULTY_CODE" ColumnName="FACULTY_CODE" />
+                <ScalarProperty Name="GROUP_NUMBER" ColumnName="GROUP_NUMBER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SheaduleModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEACHER">
+            <EntityTypeMapping TypeName="SheaduleModel.TEACHER">
+              <MappingFragment StoreEntitySet="TEACHER">
+                <ScalarProperty Name="TEACHER_CODE" ColumnName="TEACHER_CODE" />
+                <ScalarProperty Name="TEACHER_NAME" ColumnName="TEACHER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIME">
+            <EntityTypeMapping TypeName="SheaduleModel.TIME">
+              <MappingFragment StoreEntitySet="TIME">
+                <ScalarProperty Name="TIME_CODE" ColumnName="TIME_CODE" />
+                <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+                <ScalarProperty Name="TIME_END" ColumnName="TIME_END" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIMETABLE">
+            <EntityTypeMapping TypeName="SheaduleModel.TIMETABLE">
+              <MappingFragment StoreEntitySet="TIMETABLE">
+                <ScalarProperty Name="LESSON_CODE" ColumnName="LESSON_CODE" />
+                <ScalarProperty Name="WEEKDAY_CODE" ColumnName="WEEKDAY_CODE" />
+                <ScalarProperty Name="COURSE_CODE" ColumnName="COURSE_CODE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="TEACHER_CODE" ColumnName="TEACHER_CODE" />
+                <ScalarProperty Name="DISCIPLINE_CODE" ColumnName="DISCIPLINE_CODE" />
+                <ScalarProperty Name="ACTIVITY_TYPE_CODE" ColumnName="ACTIVITY_TYPE_CODE" />
+                <ScalarProperty Name="AUDITORIUM_CODE" ColumnName="AUDITORIUM_CODE" />
+                <ScalarProperty Name="WEEK_NUMBER" ColumnName="WEEK_NUMBER" />
+                <ScalarProperty Name="TIME_CODE" ColumnName="TIME_CODE" />
+                <ScalarProperty Name="CROSSES" ColumnName="CROSSES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WEEKDAY">
+            <EntityTypeMapping TypeName="SheaduleModel.WEEKDAY">
+              <MappingFragment StoreEntitySet="WEEKDAY">
+                <ScalarProperty Name="WEEKDAY_CODE" ColumnName="WEEKDAY_CODE" />
+                <ScalarProperty Name="WEEKDAY_NAME" ColumnName="WEEKDAY_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

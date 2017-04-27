@@ -1,0 +1,129 @@
+﻿namespace SheduleEF
+{
+    partial class GroupAdd
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupAdd));
+            this.FacultyName = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NameLable = new System.Windows.Forms.Label();
+            this.GroupNumber = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // FacultyName
+            // 
+            this.FacultyName.FormattingEnabled = true;
+            this.FacultyName.Items.AddRange(new object[] {
+            "ИВТФ",
+            "ИФФ",
+            "ЭЭФ",
+            "ТЭФ",
+            "ЭМФ",
+            "ФЭУ",
+            "ФИС"});
+            this.FacultyName.Location = new System.Drawing.Point(199, 49);
+            this.FacultyName.Name = "FacultyName";
+            this.FacultyName.Size = new System.Drawing.Size(136, 21);
+            this.FacultyName.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(263, 88);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Выберите факультет";
+            // 
+            // NameLable
+            // 
+            this.NameLable.AutoSize = true;
+            this.NameLable.Location = new System.Drawing.Point(14, 17);
+            this.NameLable.Name = "NameLable";
+            this.NameLable.Size = new System.Drawing.Size(123, 13);
+            this.NameLable.TabIndex = 10;
+            this.NameLable.Text = "Введите номер группы";
+            // 
+            // GroupNumber
+            // 
+            this.GroupNumber.Location = new System.Drawing.Point(199, 13);
+            this.GroupNumber.Name = "GroupNumber";
+            this.GroupNumber.Size = new System.Drawing.Size(136, 20);
+            this.GroupNumber.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label2.Location = new System.Drawing.Point(12, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "(c) ИГЭУ 2016";
+            // 
+            // GroupAdd
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(399, 125);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.FacultyName);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NameLable);
+            this.Controls.Add(this.GroupNumber);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "GroupAdd";
+            this.Text = "Расписание ИГЭУ";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ComboBox FacultyName;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label NameLable;
+        private System.Windows.Forms.TextBox GroupNumber;
+        private System.Windows.Forms.Label label2;
+    }
+}

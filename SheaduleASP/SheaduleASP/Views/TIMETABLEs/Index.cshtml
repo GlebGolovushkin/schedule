@@ -1,0 +1,101 @@
+﻿@model IEnumerable<SheaduleASP.TIMETABLE>
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Занятия</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Добавить новое", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                <p>Курс</p>
+            </th>
+            <th>
+                <p>Номер недели</p>
+            </th>
+            <th>
+                <p>Кресты</p>
+            </th>
+            <th>
+                <p>Вид</p>
+            </th>
+            <th>
+                <p>Здание</p>
+            </th>
+            <th>
+                <p>Аудитория</p>
+            </th>
+            <th>
+                <p>Дисуиплина</p>
+            </th>
+            <th>
+                <p>Группа</p>
+            </th>
+            <th>
+                <p>Преподаватель</p>
+            </th>
+            <th>
+                <p>Время начала</p>
+            </th>
+            <th>
+                <p>День недели</p>
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.COURSE_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WEEK_NUMBER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CROSSES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACTIVITY.ACTIVITY_TYPE_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AUDITORIUM.BUILDING)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AUDITORIUM.AUDITORIUM_NUMBER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DISCIPLINE.DISCIPLINE_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GROUPS.GROUP_NUMBER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TEACHER.TEACHER_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIME.TIME_START)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WEEKDAY.WEEKDAY_NAME)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id=item.LESSON_CODE }) |
+                @Html.ActionLink("Информация", "Details", new { id=item.LESSON_CODE }) |
+                @Html.ActionLink("Удалить", "Delete", new { id=item.LESSON_CODE })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

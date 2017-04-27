@@ -1,0 +1,136 @@
+﻿@model IEnumerable<TIMETABLE>
+@{
+    //Layout = null;
+}
+@Scripts.Render("~/Scripts/jquery-1.10.2.js")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="widdt=device-widdt"/>
+    <title>Расписание</title>
+    <script type="text/javascript">
+        function yesnoCheck(a) {
+            var label = a.value;
+            if (label == "students") {
+                document.getElementById('stud').style.display = 'block';
+                document.getElementById('teacher').style.display = 'none';
+                document.getElementById('aud').style.display = 'none';
+            }
+            else if (label == "teachers") {
+                document.getElementById('teacher').style.display = 'block';
+                document.getElementById('stud').style.display = 'none';
+                document.getElementById('aud').style.display = 'none';
+            }
+            else if (label == "auditoriums") {
+                document.getElementById('aud').style.display = 'block';
+                document.getElementById('stud').style.display = 'none';
+                document.getElementById('teacher').style.display = 'none';
+            }
+            submitButton.click();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h3>Расписание</h3>
+        @using (Ajax.BeginForm("Sheadule", new AjaxOptions { UpdateTargetId = "results" }))
+        {
+            <table class="radio" cellpadding="17">
+                <tr>
+                    <th>
+                        @Html.RadioButton("SHEDULE", "students", true, new { onclick = "javascript:yesnoCheck(this);" })
+                        <p>Студента</p>
+                    </th>
+                    <th>
+                        @Html.RadioButton("SHEDULE", "teachers", new { onclick = "javascript:yesnoCheck(this);" })
+                        <p>Преподавателя</p>
+                    </th>
+                    <th>
+                        @Html.RadioButton("SHEDULE", "auditoriums", new { onclick = "javascript:yesnoCheck(this);" })
+                        <p>Аудитории</p>
+                    </th>
+            </table>
+            <table id="stud" cellpadding="3">
+                <tr>
+                    <th>
+                        <span id="facTxt">Факультет</span>
+                        @Html.DropDownList("FACULTY_NAME", null, new { onchange = "submitButton.click();" })
+                    </th>
+                    @{
+                        var list = new List<SelectListItem>();
+                        list.Add(new SelectListItem { Text = "1" });
+                        list.Add(new SelectListItem { Text = "2" });
+                        list.Add(new SelectListItem { Text = "3" });
+                        list.Add(new SelectListItem { Text = "4" });
+                        list.Add(new SelectListItem { Text = "5" });
+                        list.Add(new SelectListItem { Text = "1м" });
+                        list.Add(new SelectListItem { Text = "2м" });
+                        <th>
+                            <span id="groupTxt">Группа</span>
+                        </th>
+                        <th>
+                            @Html.DropDownList("COURCE_NUMBER", list, new { onchange = "submitButton.click();" })
+                        </th>
+                        <th>
+                            @Html.DropDownList("GROUP_NUMBER", null, new { onchange = "submitButton.click();" })
+                        </th>
+                        var crosses = new List<SelectListItem>
+                            ();
+                        crosses.Add(new SelectListItem { Text = "1" });
+                        crosses.Add(new SelectListItem { Text = "2" });
+                        <th>
+                            <span id="crossesTxt">Кресты</span>
+                        </th>
+                        <th>
+                            @Html.DropDownList("CROSSES", crosses, new { onchange = "submitButton.click();" })
+                        </th>
+                    }
+                </tr>
+            </table>
+            <table id="teacher" hidden="true" cellpadding="3">
+                <tr>
+                    <th>
+                        <span>Преподаватель</span>
+                    </th>
+                    <th>
+                        @Html.DropDownList("TEACHER_NAME", null, new { onchange = "submitButton.click();" })
+                    </th>
+                </tr>
+            </table>
+            <table id="aud" hidden="true" cellpadding="3">
+                <tr>
+                    <th>
+                        <span>Аудитория</span>
+                    </th>
+                    <th>
+                        @Html.DropDownList("AUDITORIUM_NUMBER", null, new { onchange = "submitButton.click();" })
+                    </th>
+                </tr>
+            </table>
+            {
+                <input type="submit" id="submitButton" value="Расписание" hidden="true"/>
+            }
+            <hr>
+                        <div id="results"></div>
+                        }
+        <hr>
+        <a href="/AUDITORIUMs/Index">Просмотреть аудитории</a>
+        <br>
+        <br>
+        <a href="/DISCIPLINEs/Index">Просмотреть дисциплины</a>
+        <br>
+        <br>
+        <a href="/GROUPS/Index">Просмотреть группы</a>
+        <br>
+        <br>
+        <a href="/TEACHERs/Index">Просмотреть учителей</a>
+        <br>
+        <br>
+        <a href="/TIMETABLEs/Index">Просмотреть занятия</a>
+    </div>
+</body>
+</html>

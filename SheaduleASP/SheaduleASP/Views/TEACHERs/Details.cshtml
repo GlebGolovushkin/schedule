@@ -1,0 +1,34 @@
+﻿@model SheaduleASP.TEACHER
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Информация</title>
+</head>
+<body>
+    <div>
+        <h4>Преподаватель</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <p>Имя преподавателя</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TEACHER_NAME)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Редактировать", "Edit", new { id = Model.TEACHER_CODE }) |
+        @Html.ActionLink("Вернуться к преподавателям", "Index")
+    </p>
+</body>
+</html>

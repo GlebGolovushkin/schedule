@@ -1,0 +1,40 @@
+﻿@model SheaduleASP.TEACHER
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удаление преподавателя</title>
+</head>
+<body>
+    <h3>Вы уверены что хотите удалить?</h3>
+    <div>
+        <h4>Преподаватель</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <p>ФИО преподавателя</p>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TEACHER_NAME)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Вернуться к преподавателям", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

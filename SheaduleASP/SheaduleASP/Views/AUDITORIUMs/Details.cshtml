@@ -1,0 +1,50 @@
+﻿@model AUDITORIUM
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Информация</title>
+</head>
+<body>
+<div>
+    <h4>Аудитории</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Здание</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BUILDING)
+        </dd>
+
+        <dt>
+            <p>Вместимость</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAPACITY)
+        </dd>
+
+        <dt>
+            <p>Номер аудитории</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AUDITORIUM_NUMBER)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new {id = Model.AUDITORIUM_CODE}) |
+    @Html.ActionLink("Вернуться к аудиториям", "Index")
+</p>
+</body>
+</html>
