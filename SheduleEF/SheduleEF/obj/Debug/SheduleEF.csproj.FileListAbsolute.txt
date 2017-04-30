@@ -24,3 +24,29 @@ C:\Users\Shadaw\Documents\Visual Studio 2015\Projects\SheduleEF\SheduleEF\obj\De
 C:\Users\Shadaw\documents\visual studio 2015\Projects\SheduleEF\SheduleEF\bin\Debug\EPPlus.dll
 C:\Users\Shadaw\documents\visual studio 2015\Projects\SheduleEF\SheduleEF\bin\Debug\EPPlus.xml
 C:\Users\Shadaw\Documents\Visual Studio 2015\Projects\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Admin.resources
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\SheduleEF.exe.config
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.exe
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.pdb
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\SheduleEF.exe
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\SheduleEF.pdb
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\EntityFramework.dll
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\EPPlus.dll
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\EntityFramework.xml
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\EPPlus.xml
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\ru\EntityFramework.resources.dll
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.csprojResolveAssemblyReference.cache
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Admin.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Auditor.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.DisciplineAdd.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.GroupAdd.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Main.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Properties.Resources.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.TascAddAud.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.TascAddTeacher.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.TascAddStudent.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.TascAdd.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.TeacherAdd.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.csproj.GenerateResource.Cache

@@ -962,14 +962,8 @@ namespace SheduleEF
               {
                   ExcelWorkSheet.Cells[1, i] = dataGridView2.Columns[i - 1].HeaderText;
               }
-              for (int i = 0; i < dataGridView2.Rows.Count ; i++)
-              {
-                  for (int j = 0; j < dataGridView2.Columns.Count ; j++)
-                  {
-                      if (dataGridView2.Rows[i].Cells[j].Value != null)
-                          ExcelWorkSheet.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
-                  }
-              }
+            string sellName="";
+            Excel.Range rn;
             rng.Borders.LineStyle = Excel.XlBordersIndex.xlInsideHorizontal;
             rng.WrapText = true;
             rng.Columns.ColumnWidth = 24;
@@ -987,6 +981,45 @@ namespace SheduleEF
             Excel.Range rng4 = ExcelWorkSheet.get_Range("A10", "H10");
             rng4.Interior.ColorIndex = 24;
             rng4.Interior.PatternColorIndex = Excel.Constants.xlAutomatic;
+            int number;
+            for (int i = 0; i < dataGridView2.Rows.Count ; i++)
+              {
+                  for (int j = 0; j < dataGridView2.Columns.Count ; j++)
+                  {
+                      if (dataGridView2.Rows[i].Cells[j].Value != null)
+                      {
+                          ExcelWorkSheet.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
+                        if (j == 1)
+                            sellName = "B";
+                        else if (j == 2)
+                            sellName = "C";
+                        else if (j == 3)
+                            sellName = "D";
+                        else if (j == 4)
+                            sellName = "E";
+                        else if (j == 5)
+                            sellName = "F";
+                        else if (j == 6)
+                            sellName = "G";
+                        else if (j == 7)
+                            sellName = "H";
+                          number = i + 2;
+                          if (i > 0 && j > 0 && dataGridView2.Rows[i].Cells[j].Value!="")
+                          {
+                              rn = ExcelWorkSheet.get_Range(sellName + "" + number, sellName + "" + number);
+                              if (dataGridView2.Rows[i].Cells[j].Style.BackColor == Color.LightPink)
+                                  rn.Interior.ColorIndex = 38;
+                              else if (dataGridView2.Rows[i].Cells[j].Style.BackColor == Color.PaleGreen)
+                                  rn.Interior.ColorIndex = 35;
+                              else if (dataGridView2.Rows[i].Cells[j].Style.BackColor == Color.BlanchedAlmond)
+                                  rn.Interior.ColorIndex = 36;
+                              else if (dataGridView2.Rows[i].Cells[j].Style.BackColor == Color.Thistle)
+                                  rn.Interior.ColorIndex = 37;
+                              rn.Interior.PatternColorIndex = Excel.Constants.xlAutomatic;
+                          }
+                      }
+                }
+              }
             
             ExcelApp.Visible = true;
 
