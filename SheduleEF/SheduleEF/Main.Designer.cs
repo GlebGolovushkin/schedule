@@ -135,9 +135,12 @@
             this.файлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.распечататьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.таблицейExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изображениемToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.распечататьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.нагрузкаПреподавателейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.нагрузкаАудиторийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gROUPSBindingSource)).BeginInit();
@@ -495,14 +498,14 @@
             // картинкойToolStripMenuItem
             // 
             this.картинкойToolStripMenuItem.Name = "картинкойToolStripMenuItem";
-            this.картинкойToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.картинкойToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.картинкойToolStripMenuItem.Text = "Изображение";
             this.картинкойToolStripMenuItem.Click += new System.EventHandler(this.картинкойToolStripMenuItem_Click);
             // 
             // excelФайломToolStripMenuItem
             // 
             this.excelФайломToolStripMenuItem.Name = "excelФайломToolStripMenuItem";
-            this.excelФайломToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.excelФайломToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.excelФайломToolStripMenuItem.Text = "Лист Excel";
             this.excelФайломToolStripMenuItem.Click += new System.EventHandler(this.excelФайломToolStripMenuItem_Click);
             // 
@@ -999,7 +1002,8 @@
             this.файлToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьToolStripMenuItem1,
             this.сохранитьToolStripMenuItem2,
-            this.распечататьToolStripMenuItem1});
+            this.распечататьToolStripMenuItem1,
+            this.отчётToolStripMenuItem});
             this.файлToolStripMenuItem1.Name = "файлToolStripMenuItem1";
             this.файлToolStripMenuItem1.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem1.Text = "Файл";
@@ -1020,13 +1024,6 @@
             this.сохранитьToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.сохранитьToolStripMenuItem2.Text = "Сохранить";
             // 
-            // распечататьToolStripMenuItem1
-            // 
-            this.распечататьToolStripMenuItem1.Name = "распечататьToolStripMenuItem1";
-            this.распечататьToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.распечататьToolStripMenuItem1.Text = "Распечатать";
-            this.распечататьToolStripMenuItem1.Click += new System.EventHandler(this.распечататьToolStripMenuItem1_Click);
-            // 
             // таблицейExcelToolStripMenuItem
             // 
             this.таблицейExcelToolStripMenuItem.Name = "таблицейExcelToolStripMenuItem";
@@ -1040,6 +1037,36 @@
             this.изображениемToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.изображениемToolStripMenuItem.Text = "Изображением";
             this.изображениемToolStripMenuItem.Click += new System.EventHandler(this.изображениемToolStripMenuItem_Click);
+            // 
+            // распечататьToolStripMenuItem1
+            // 
+            this.распечататьToolStripMenuItem1.Name = "распечататьToolStripMenuItem1";
+            this.распечататьToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.распечататьToolStripMenuItem1.Text = "Распечатать";
+            this.распечататьToolStripMenuItem1.Click += new System.EventHandler(this.распечататьToolStripMenuItem1_Click);
+            // 
+            // отчётToolStripMenuItem
+            // 
+            this.отчётToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.нагрузкаПреподавателейToolStripMenuItem,
+            this.нагрузкаАудиторийToolStripMenuItem});
+            this.отчётToolStripMenuItem.Name = "отчётToolStripMenuItem";
+            this.отчётToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.отчётToolStripMenuItem.Text = "Отчёт";
+            // 
+            // нагрузкаПреподавателейToolStripMenuItem
+            // 
+            this.нагрузкаПреподавателейToolStripMenuItem.Name = "нагрузкаПреподавателейToolStripMenuItem";
+            this.нагрузкаПреподавателейToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.нагрузкаПреподавателейToolStripMenuItem.Text = "Нагрузка преподавателей";
+            this.нагрузкаПреподавателейToolStripMenuItem.Click += new System.EventHandler(this.нагрузкаПреподавателейToolStripMenuItem_Click);
+            // 
+            // нагрузкаАудиторийToolStripMenuItem
+            // 
+            this.нагрузкаАудиторийToolStripMenuItem.Name = "нагрузкаАудиторийToolStripMenuItem";
+            this.нагрузкаАудиторийToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.нагрузкаАудиторийToolStripMenuItem.Text = "Нагрузка аудиторий";
+            this.нагрузкаАудиторийToolStripMenuItem.Click += new System.EventHandler(this.нагрузкаАудиторийToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1227,5 +1254,8 @@
         private System.Windows.Forms.ToolStripMenuItem таблицейExcelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изображениемToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem распечататьToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem отчётToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem нагрузкаПреподавателейToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem нагрузкаАудиторийToolStripMenuItem;
     }
 }

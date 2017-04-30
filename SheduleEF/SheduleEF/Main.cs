@@ -13,6 +13,7 @@ using Microsoft.Office.Interop;
 using Excel = Microsoft.Office.Interop.Excel;
 using OfficeOpenXml.Style;
 using OfficeOpenXml;
+using SheduleEF.Models;
 
 namespace SheduleEF
 {
@@ -1074,6 +1075,137 @@ namespace SheduleEF
         private void распечататьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Print_Click(null, null);
+        }
+
+        private void нагрузкаПреподавателейToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            Excel.Range rng;
+            Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+            Excel.Workbook ExcelWorkBook;
+            Excel.Worksheet ExcelWorkSheet;
+            ExcelWorkBook = ExcelApp.Workbooks.Add(System.Reflection.Missing.Value);
+            ExcelWorkSheet = (Excel.Worksheet)ExcelWorkBook.Worksheets.get_Item(1);
+            rng = ExcelWorkSheet.get_Range("A2", "H17");
+            List<Teacher> teachers = new List<Teacher>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (!teachers.Any(t => t.name == dataGridView1.Rows[i].Cells[7].Value.ToString()))
+                {
+                    teachers.Add(new Teacher(dataGridView1.Rows[i].Cells[7].Value.ToString()));
+                }
+                if (dataGridView1.Rows[i].Cells[9].Value.ToString() == "Лекция")
+                    teachers.First(t => t.name == dataGridView1.Rows[i].Cells[7].Value.ToString()).lecturs++;
+                else if (dataGridView1.Rows[i].Cells[9].Value.ToString() == "Семинар")
+                    teachers.First(t => t.name == dataGridView1.Rows[i].Cells[7].Value.ToString()).seminars++;
+                else if (dataGridView1.Rows[i].Cells[9].Value.ToString() == "Лабараторная")
+                    teachers.First(t => t.name == dataGridView1.Rows[i].Cells[7].Value.ToString()).labs++;
+                else if (dataGridView1.Rows[i].Cells[9].Value.ToString() == "Физическое воспитание")
+                    teachers.First(t => t.name == dataGridView1.Rows[i].Cells[7].Value.ToString()).phisicalEducation++;
+            }
+            rng = ExcelWorkSheet.get_Range("A2", "F"+ (teachers.Count+2));
+            rng.Borders.LineStyle = Excel.XlBordersIndex.xlInsideHorizontal;
+            rng.WrapText = true;
+            rng.Columns.ColumnWidth = 24;
+            rng.Rows.AutoFit();
+            ExcelWorkSheet.Cells[2, 1] = "Преподаватель";
+            ExcelWorkSheet.Cells[2, 2] = "Лекции";
+            ExcelWorkSheet.Cells[2, 3] = "Семинары";
+            ExcelWorkSheet.Cells[2, 4] = "Лабораторные";
+            ExcelWorkSheet.Cells[2, 5] = "Физическое воспитание";
+            ExcelWorkSheet.Cells[2, 6] = "Всего";
+            Excel.Range rng1 = ExcelWorkSheet.get_Range("A2", "F2");
+            rng1.Interior.ColorIndex = 34;
+            rng1.Interior.PatternColorIndex = Excel.Constants.xlAutomatic;
+            for (int i = 0; i < teachers.Count; i++)
+            {
+                ExcelWorkSheet.Cells[i+3,1] = teachers[i].name;
+                ExcelWorkSheet.Cells[i+3,2] = teachers[i].lecturs;
+                ExcelWorkSheet.Cells[i+3,3] = teachers[i].seminars;
+                ExcelWorkSheet.Cells[i+3,4] = teachers[i].labs;
+                ExcelWorkSheet.Cells[i+3,5] = teachers[i].phisicalEducation;
+                ExcelWorkSheet.Cells[i+3,6] = teachers[i].All();
+            }
+
+            ExcelApp.Visible = true;
+
+        }
+
+        private void нагрузкаАудиторийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            Excel.Range rng;
+            Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+            Excel.Workbook ExcelWorkBook;
+            Excel.Worksheet ExcelWorkSheet;
+            ExcelWorkBook = ExcelApp.Workbooks.Add(System.Reflection.Missing.Value);
+            ExcelWorkSheet = (Excel.Worksheet)ExcelWorkBook.Worksheets.get_Item(1);
+            rng = ExcelWorkSheet.get_Range("A2", "H17");
+            for (int i = 1; i < dataGridView2.Columns.Count + 1; i++)
+            {
+                ExcelWorkSheet.Cells[1, i] = dataGridView2.Columns[i - 1].HeaderText;
+            }
+            string sellName = "";
+            Excel.Range rn;
+            rng.Borders.LineStyle = Excel.XlBordersIndex.xlInsideHorizontal;
+            rng.WrapText = true;
+            rng.Columns.ColumnWidth = 24;
+            rng.Rows.AutoFit();
+            Excel.Range rng1 = ExcelWorkSheet.get_Range("A2", "A2");
+            rng1.Interior.ColorIndex = 34;
+            rng1.Interior.PatternColorIndex = Excel.Constants.xlAutomatic;
+            Excel.Range rng2 = ExcelWorkSheet.get_Range("B2", "H2");
+            rng2.Interior.ColorIndex = 42;
+            rng2.Interior.PatternColorIndex = Excel.Constants.xlAutomatic;
+            Excel.Range rng3 = ExcelWorkSheet.get_Range("A3", "A17");
+            rng3.ColumnWidth = 10;
+            rng3.Interior.ColorIndex = 42;
+            rng3.Interior.PatternColorIndex = Excel.Constants.xlAutomatic;
+            Excel.Range rng4 = ExcelWorkSheet.get_Range("A10", "H10");
+            rng4.Interior.ColorIndex = 24;
+            rng4.Interior.PatternColorIndex = Excel.Constants.xlAutomatic;
+            int number;
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView2.Columns.Count; j++)
+                {
+                    if (dataGridView2.Rows[i].Cells[j].Value != null)
+                    {
+                        ExcelWorkSheet.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
+                        if (j == 1)
+                            sellName = "B";
+                        else if (j == 2)
+                            sellName = "C";
+                        else if (j == 3)
+                            sellName = "D";
+                        else if (j == 4)
+                            sellName = "E";
+                        else if (j == 5)
+                            sellName = "F";
+                        else if (j == 6)
+                            sellName = "G";
+                        else if (j == 7)
+                            sellName = "H";
+                        number = i + 2;
+                        if (i > 0 && j > 0 && dataGridView2.Rows[i].Cells[j].Value != "")
+                        {
+                            rn = ExcelWorkSheet.get_Range(sellName + "" + number, sellName + "" + number);
+                            if (dataGridView2.Rows[i].Cells[j].Style.BackColor == Color.LightPink)
+                                rn.Interior.ColorIndex = 38;
+                            else if (dataGridView2.Rows[i].Cells[j].Style.BackColor == Color.PaleGreen)
+                                rn.Interior.ColorIndex = 35;
+                            else if (dataGridView2.Rows[i].Cells[j].Style.BackColor == Color.BlanchedAlmond)
+                                rn.Interior.ColorIndex = 36;
+                            else if (dataGridView2.Rows[i].Cells[j].Style.BackColor == Color.Thistle)
+                                rn.Interior.ColorIndex = 37;
+                            rn.Interior.PatternColorIndex = Excel.Constants.xlAutomatic;
+                        }
+                    }
+                }
+            }
+
+            ExcelApp.Visible = true;
+
         }
 
         private void администраторToolStripMenuItem_Click(object sender, EventArgs e)
