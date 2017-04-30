@@ -6,22 +6,23 @@ using System.Threading.Tasks;
 
 namespace SheduleEF.Models
 {
-    public class Teacher
+    public class Auditory
     {
-        public Teacher(string name, int lecturs = 0, int seminars = 0, int labs = 0, int PE = 0)
+        public Auditory(string building, string number, int labs=0, int seminars=0, int lections=0, int pE = 0)
         {
-            this.name = name;
-            this.lecturs = lecturs;
+            this.building = building;
+            this.number = number;
+            this.lecturs = lections;
             this.labs = labs;
-            this.phisicalEducation = PE;
+            this.phisicalEducation = pE;
             this.seminars = seminars;
         }
-
-        public string name;
+        public string building;
+        public int lecturs;
+        public string number;
         public int labs;
         public int phisicalEducation;
         public int seminars;
-        public int lecturs;
 
         public int All()
         {
