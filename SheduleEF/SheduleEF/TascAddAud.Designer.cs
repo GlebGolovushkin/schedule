@@ -113,6 +113,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Group = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Schedule = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).BeginInit();
@@ -306,7 +308,7 @@
             // 
             // Ok
             // 
-            this.Ok.Location = new System.Drawing.Point(106, 153);
+            this.Ok.Location = new System.Drawing.Point(107, 205);
             this.Ok.Name = "Ok";
             this.Ok.Size = new System.Drawing.Size(75, 23);
             this.Ok.TabIndex = 3;
@@ -321,8 +323,9 @@
             "Учителя",
             "Аудиторию",
             "Дисциплину",
-            "Группу"});
-            this.AddList.Location = new System.Drawing.Point(13, 81);
+            "Группу",
+            "Расписание"});
+            this.AddList.Location = new System.Drawing.Point(14, 133);
             this.AddList.Name = "AddList";
             this.AddList.Size = new System.Drawing.Size(87, 95);
             this.AddList.TabIndex = 4;
@@ -330,7 +333,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 63);
+            this.label7.Location = new System.Drawing.Point(12, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 2;
@@ -339,7 +342,7 @@
             // 
             // AddingTask
             // 
-            this.AddingTask.Location = new System.Drawing.Point(468, 135);
+            this.AddingTask.Location = new System.Drawing.Point(469, 187);
             this.AddingTask.Name = "AddingTask";
             this.AddingTask.Size = new System.Drawing.Size(75, 23);
             this.AddingTask.TabIndex = 5;
@@ -579,7 +582,7 @@
             this.cAPACITYDataGridViewTextBoxColumn,
             this.aUDITORIUMNUMBERDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.aUDITORIUMBindingSource10;
-            this.dataGridView1.Location = new System.Drawing.Point(68, 208);
+            this.dataGridView1.Location = new System.Drawing.Point(68, 199);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(14, 11);
             this.dataGridView1.TabIndex = 6;
@@ -588,7 +591,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(121, 81);
+            this.label12.Location = new System.Drawing.Point(121, 91);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 13);
             this.label12.TabIndex = 2;
@@ -598,7 +601,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.Location = new System.Drawing.Point(193, 81);
+            this.checkBox1.Location = new System.Drawing.Point(193, 91);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 7;
@@ -655,17 +658,38 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(465, 163);
+            this.label2.Location = new System.Drawing.Point(466, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 28;
             this.label2.Text = "(c) ИГЭУ 2016";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 13);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Расписание";
+            // 
+            // Schedule
+            // 
+            this.Schedule.DisplayMember = "TYPE_NAME";
+            this.Schedule.FormattingEnabled = true;
+            this.Schedule.Location = new System.Drawing.Point(12, 84);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(89, 21);
+            this.Schedule.TabIndex = 31;
+            this.Schedule.ValueMember = "TYPE_NAME";
+            // 
             // TascAddAud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 185);
+            this.ClientSize = new System.Drawing.Size(553, 241);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.Schedule);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.AddingTask);
@@ -821,5 +845,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox Group;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Schedule;
     }
 }

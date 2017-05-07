@@ -122,6 +122,8 @@
           <Property Name="TIME_START" Type="varchar" MaxLength="50" />
           <Property Name="TIME_END" Type="varchar" MaxLength="50" />
           <Property Name="CROSSES" Type="int" />
+          <Property Name="TYPE_TIME_START" Type="date" />
+          <Property Name="TYPE_TIME_END" Type="date" />
         </EntityType>-->
         <Association Name="FK_GROUPS_FACULTY">
           <End Role="FACULTY" Type="Self.FACULTY" Multiplicity="0..1" />
@@ -507,7 +509,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SheaduleEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SheaduleContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ACTIVITY" EntityType="Self.ACTIVITY" />
           <EntitySet Name="AUDITORIUM" EntityType="Self.AUDITORIUM" />
           <EntitySet Name="DISCIPLINE" EntityType="Self.DISCIPLINE" />
@@ -561,7 +563,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище SheaduleModelContainer" CdmEntityContainer="SheaduleEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SheaduleModelContainer" CdmEntityContainer="SheaduleContext">
           <EntitySetMapping Name="ACTIVITY">
             <EntityTypeMapping TypeName="SheaduleModel.ACTIVITY">
               <MappingFragment StoreEntitySet="ACTIVITY">

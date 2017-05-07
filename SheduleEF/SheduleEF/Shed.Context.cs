@@ -13,10 +13,10 @@ namespace SheduleEF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SheaduleEntities : DbContext
+    public partial class SheaduleContext : DbContext
     {
-        public SheaduleEntities()
-            : base("name=SheaduleEntities")
+        public SheaduleContext()
+            : base("name=SheaduleContext")
         {
         }
     

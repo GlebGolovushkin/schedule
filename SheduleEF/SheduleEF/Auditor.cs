@@ -12,11 +12,11 @@ namespace SheduleEF
 {
     public partial class Auditor : Form
     {
-        SheaduleEntities db;
+        SheaduleContext db;
         public Auditor()
         {
             InitializeComponent();
-            db = new SheaduleEntities();
+            db = new SheaduleContext();
             AuditorBuilding.DropDownStyle = ComboBoxStyle.DropDownList;
             AuditorBuilding.SelectedIndex = 0;
         }

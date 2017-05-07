@@ -141,6 +141,9 @@
             this.отчётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.нагрузкаПреподавателейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.нагрузкаАудиторийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sheaduleDataSet35 = new SheduleEF.SheaduleDataSet35();
+            this.timeTableViewBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.timeTableViewTableAdapter4 = new SheduleEF.SheaduleDataSet35TableAdapters.TimeTableViewTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gROUPSBindingSource)).BeginInit();
@@ -169,6 +172,8 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // AddNewItem
@@ -419,7 +424,7 @@
             this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn,
             this.tIMESTARTDataGridViewTextBoxColumn,
             this.tIMEENDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.timeTableViewBindingSource2;
+            this.dataGridView1.DataSource = this.timeTableViewBindingSource4;
             this.dataGridView1.Location = new System.Drawing.Point(26, 207);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -1011,7 +1016,7 @@
             // добавитьToolStripMenuItem1
             // 
             this.добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
-            this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
             this.добавитьToolStripMenuItem1.Text = "Добавить";
             this.добавитьToolStripMenuItem1.Click += new System.EventHandler(this.добавитьToolStripMenuItem1_Click);
             // 
@@ -1021,7 +1026,7 @@
             this.таблицейExcelToolStripMenuItem,
             this.изображениемToolStripMenuItem});
             this.сохранитьToolStripMenuItem2.Name = "сохранитьToolStripMenuItem2";
-            this.сохранитьToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.сохранитьToolStripMenuItem2.Size = new System.Drawing.Size(141, 22);
             this.сохранитьToolStripMenuItem2.Text = "Сохранить";
             // 
             // таблицейExcelToolStripMenuItem
@@ -1041,7 +1046,7 @@
             // распечататьToolStripMenuItem1
             // 
             this.распечататьToolStripMenuItem1.Name = "распечататьToolStripMenuItem1";
-            this.распечататьToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.распечататьToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
             this.распечататьToolStripMenuItem1.Text = "Распечатать";
             this.распечататьToolStripMenuItem1.Click += new System.EventHandler(this.распечататьToolStripMenuItem1_Click);
             // 
@@ -1051,7 +1056,7 @@
             this.нагрузкаПреподавателейToolStripMenuItem,
             this.нагрузкаАудиторийToolStripMenuItem});
             this.отчётToolStripMenuItem.Name = "отчётToolStripMenuItem";
-            this.отчётToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.отчётToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.отчётToolStripMenuItem.Text = "Отчёт";
             // 
             // нагрузкаПреподавателейToolStripMenuItem
@@ -1067,6 +1072,20 @@
             this.нагрузкаАудиторийToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.нагрузкаАудиторийToolStripMenuItem.Text = "Нагрузка аудиторий";
             this.нагрузкаАудиторийToolStripMenuItem.Click += new System.EventHandler(this.нагрузкаАудиторийToolStripMenuItem_Click);
+            // 
+            // sheaduleDataSet35
+            // 
+            this.sheaduleDataSet35.DataSetName = "SheaduleDataSet35";
+            this.sheaduleDataSet35.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // timeTableViewBindingSource4
+            // 
+            this.timeTableViewBindingSource4.DataMember = "TimeTableView";
+            this.timeTableViewBindingSource4.DataSource = this.sheaduleDataSet35;
+            // 
+            // timeTableViewTableAdapter4
+            // 
+            this.timeTableViewTableAdapter4.ClearBeforeFill = true;
             // 
             // Main
             // 
@@ -1139,6 +1158,8 @@
             this.panel2.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1257,5 +1278,8 @@
         private System.Windows.Forms.ToolStripMenuItem отчётToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem нагрузкаПреподавателейToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem нагрузкаАудиторийToolStripMenuItem;
+        private SheaduleDataSet35 sheaduleDataSet35;
+        private System.Windows.Forms.BindingSource timeTableViewBindingSource4;
+        private SheaduleDataSet35TableAdapters.TimeTableViewTableAdapter timeTableViewTableAdapter4;
     }
 }

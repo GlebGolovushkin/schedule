@@ -12,7 +12,7 @@ namespace SheduleEF
 {
     public partial class TascAddStudent : Form
     {
-        private SheaduleEntities db;
+        private SheaduleContext db;
         private string day;
         private string time;
         private int group;
@@ -28,7 +28,7 @@ namespace SheduleEF
             this.course = course;
             this.weeknumber = weeknumber;
             InitializeComponent();
-            db=new SheaduleEntities();
+            db=new SheaduleContext();
             Activity.DropDownStyle =
                 Building.DropDownStyle =
                         Auditor.DropDownStyle =
@@ -42,6 +42,8 @@ namespace SheduleEF
 
         private void TascAdd_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet34.TYPE". При необходимости она может быть перемещена или удалена.
+            this.tYPETableAdapter.Fill(this.sheaduleDataSet34.TYPE);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet22.ACTIVITY". При необходимости она может быть перемещена или удалена.
             this.aCTIVITYTableAdapter1.Fill(this.sheaduleDataSet22.ACTIVITY);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet21.AUDITORIUM". При необходимости она может быть перемещена или удалена.
@@ -107,6 +109,11 @@ namespace SheduleEF
                 GroupAdd ga = new GroupAdd();
                 ga.ShowDialog();
             }
+            else if (AddList.SelectedItem.ToString() == "Расписание")
+            {
+                ScheduleAdd sa = new ScheduleAdd();
+                sa.ShowDialog();
+            }
         }
 
         private void AddingTask_Click(object sender, EventArgs e)
@@ -117,6 +124,8 @@ namespace SheduleEF
                 WEEKDAY wd = db.WEEKDAY.FirstOrDefault(p => p.WEEKDAY_NAME == day);
                 ACTIVITY ac = db.ACTIVITY.FirstOrDefault(p => p.ACTIVITY_TYPE_NAME == Activity.SelectedValue.ToString());
                 if (ac == null) MessageBox.Show("Неверный вид занятия");
+                TYPE type = db.TYPE.FirstOrDefault(p => p.TYPE_NAME == Schedule.SelectedValue.ToString());
+                if (type == null) MessageBox.Show("Неверное расписание");
                 AUDITORIUM au =
                     db.AUDITORIUM.FirstOrDefault(
                         p =>
@@ -141,6 +150,7 @@ namespace SheduleEF
                 timetable.AUDITORIUM_CODE = au.AUDITORIUM_CODE;
                 timetable.WEEK_NUMBER = weeknumber;
                 timetable.TIME_CODE = ti.TIME_CODE;
+                timetable.TYPE_CODE = type.TYPE_CODE;
                 timetable.CROSSES = crosses;
                 db.TIMETABLE.Add(timetable);
                 db.SaveChanges();

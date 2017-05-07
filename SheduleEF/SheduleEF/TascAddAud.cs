@@ -17,7 +17,7 @@ namespace SheduleEF
         string weekday;
         private int weeknumber;
         string time;
-        private SheaduleEntities db;
+        private SheaduleContext db;
         public TascAddAud(string build,string aud,string weekday,int weeknumber, string time)
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace SheduleEF
             this.weekday = weekday;
             this.weeknumber = weeknumber;
             this.time = time;
-            db=new SheaduleEntities();
+            db=new SheaduleContext();
             Activity.DropDownStyle =
                     Course.DropDownStyle =
                             Discipline.DropDownStyle =
@@ -105,6 +105,11 @@ namespace SheduleEF
                 GroupAdd ga = new GroupAdd();
                 ga.ShowDialog();
             }
+            else if (AddList.SelectedItem.ToString() == "Расписание")
+            {
+                ScheduleAdd sa = new ScheduleAdd();
+                sa.ShowDialog();
+            }
         }
 
         private void AddingTask_Click(object sender, EventArgs e)
@@ -114,6 +119,8 @@ namespace SheduleEF
                 TIMETABLE tt = new TIMETABLE();
                 WEEKDAY wd = db.WEEKDAY.FirstOrDefault(p => p.WEEKDAY_NAME == weekday);
                 if (wd == null) MessageBox.Show("Неверный день недели");
+                TYPE type = db.TYPE.FirstOrDefault(p => p.TYPE_NAME == Schedule.SelectedValue.ToString());
+                if (type == null) MessageBox.Show("Неверное расписание");
                 ACTIVITY ac = db.ACTIVITY.FirstOrDefault(p => p.ACTIVITY_TYPE_NAME == Activity.SelectedValue.ToString());
                 if (ac == null) MessageBox.Show("Неверный вид занятия");
                 AUDITORIUM au =
@@ -141,6 +148,7 @@ namespace SheduleEF
                 timetable.AUDITORIUM_CODE = au.AUDITORIUM_CODE;
                 timetable.WEEK_NUMBER = weeknumber;
                 timetable.TIME_CODE = ti.TIME_CODE;
+                timetable.TYPE_CODE = type.TYPE_CODE;
                 timetable.CROSSES = checkBox1.Checked ? 2 : 1;
                 db.TIMETABLE.Add(timetable);
                 db.SaveChanges();

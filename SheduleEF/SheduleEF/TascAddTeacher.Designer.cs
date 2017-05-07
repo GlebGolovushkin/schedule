@@ -115,6 +115,11 @@
             this.Group = new System.Windows.Forms.ComboBox();
             this.Building = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Schedule = new System.Windows.Forms.ComboBox();
+            this.sheaduleDataSet33 = new SheduleEF.SheaduleDataSet33();
+            this.tYPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tYPETableAdapter = new SheduleEF.SheaduleDataSet33TableAdapters.TYPETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).BeginInit();
@@ -157,6 +162,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDITORIUMBindingSource11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Activity
@@ -349,7 +356,8 @@
             "Учителя",
             "Аудиторию",
             "Дисциплину",
-            "Группу"});
+            "Группу",
+            "Расписание"});
             this.AddList.Location = new System.Drawing.Point(15, 136);
             this.AddList.Name = "AddList";
             this.AddList.Size = new System.Drawing.Size(87, 95);
@@ -596,7 +604,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(117, 97);
+            this.label12.Location = new System.Drawing.Point(212, 92);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 13);
             this.label12.TabIndex = 2;
@@ -606,7 +614,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBox1.Location = new System.Drawing.Point(189, 96);
+            this.checkBox1.Location = new System.Drawing.Point(284, 91);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 7;
@@ -684,6 +692,40 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "(c) ИГЭУ 2016";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(105, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Расписание";
+            // 
+            // Schedule
+            // 
+            this.Schedule.DataSource = this.tYPEBindingSource;
+            this.Schedule.DisplayMember = "TYPE_NAME";
+            this.Schedule.FormattingEnabled = true;
+            this.Schedule.Location = new System.Drawing.Point(108, 89);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(89, 21);
+            this.Schedule.TabIndex = 1;
+            this.Schedule.ValueMember = "TYPE_NAME";
+            // 
+            // sheaduleDataSet33
+            // 
+            this.sheaduleDataSet33.DataSetName = "SheaduleDataSet33";
+            this.sheaduleDataSet33.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tYPEBindingSource
+            // 
+            this.tYPEBindingSource.DataMember = "TYPE";
+            this.tYPEBindingSource.DataSource = this.sheaduleDataSet33;
+            // 
+            // tYPETableAdapter
+            // 
+            this.tYPETableAdapter.ClearBeforeFill = true;
+            // 
             // TascAddTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,9 +737,11 @@
             this.Controls.Add(this.AddList);
             this.Controls.Add(this.Ok);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.Schedule);
             this.Controls.Add(this.Course);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Group);
@@ -756,6 +800,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDITORIUMBindingSource11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -848,5 +894,10 @@
         private System.Windows.Forms.ComboBox Group;
         private System.Windows.Forms.ComboBox Building;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Schedule;
+        private SheaduleDataSet33 sheaduleDataSet33;
+        private System.Windows.Forms.BindingSource tYPEBindingSource;
+        private SheaduleDataSet33TableAdapters.TYPETableAdapter tYPETableAdapter;
     }
 }

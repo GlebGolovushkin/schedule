@@ -111,6 +111,11 @@
             this.aUDITORIUMCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Schedule = new System.Windows.Forms.ComboBox();
+            this.sheaduleDataSet34 = new SheduleEF.SheaduleDataSet34();
+            this.tYPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tYPETableAdapter = new SheduleEF.SheaduleDataSet34TableAdapters.TYPETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).BeginInit();
@@ -153,6 +158,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDITORIUMBindingSource11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Activity
@@ -345,7 +352,7 @@
             // 
             // Ok
             // 
-            this.Ok.Location = new System.Drawing.Point(105, 152);
+            this.Ok.Location = new System.Drawing.Point(105, 202);
             this.Ok.Name = "Ok";
             this.Ok.Size = new System.Drawing.Size(75, 23);
             this.Ok.TabIndex = 3;
@@ -359,8 +366,9 @@
             this.AddList.Items.AddRange(new object[] {
             "Учителя",
             "Аудиторию",
-            "Дисциплину"});
-            this.AddList.Location = new System.Drawing.Point(12, 80);
+            "Дисциплину",
+            "Расписание"});
+            this.AddList.Location = new System.Drawing.Point(12, 130);
             this.AddList.Name = "AddList";
             this.AddList.Size = new System.Drawing.Size(87, 95);
             this.AddList.TabIndex = 4;
@@ -368,7 +376,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 62);
+            this.label7.Location = new System.Drawing.Point(10, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 2;
@@ -377,7 +385,7 @@
             // 
             // AddingTask
             // 
-            this.AddingTask.Location = new System.Drawing.Point(466, 136);
+            this.AddingTask.Location = new System.Drawing.Point(466, 186);
             this.AddingTask.Name = "AddingTask";
             this.AddingTask.Size = new System.Drawing.Size(75, 23);
             this.AddingTask.TabIndex = 5;
@@ -627,17 +635,53 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Location = new System.Drawing.Point(472, 164);
+            this.label5.Location = new System.Drawing.Point(472, 214);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 28;
             this.label5.Text = "(c) ИГЭУ 2016";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 62);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Расписание";
+            // 
+            // Schedule
+            // 
+            this.Schedule.DataSource = this.tYPEBindingSource;
+            this.Schedule.DisplayMember = "TYPE_NAME";
+            this.Schedule.FormattingEnabled = true;
+            this.Schedule.Location = new System.Drawing.Point(15, 78);
+            this.Schedule.Name = "Schedule";
+            this.Schedule.Size = new System.Drawing.Size(89, 21);
+            this.Schedule.TabIndex = 29;
+            this.Schedule.ValueMember = "TYPE_NAME";
+            // 
+            // sheaduleDataSet34
+            // 
+            this.sheaduleDataSet34.DataSetName = "SheaduleDataSet34";
+            this.sheaduleDataSet34.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tYPEBindingSource
+            // 
+            this.tYPEBindingSource.DataMember = "TYPE";
+            this.tYPEBindingSource.DataSource = this.sheaduleDataSet34;
+            // 
+            // tYPETableAdapter
+            // 
+            this.tYPETableAdapter.ClearBeforeFill = true;
+            // 
             // TascAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 186);
+            this.ClientSize = new System.Drawing.Size(567, 236);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.Schedule);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.AddingTask);
             this.Controls.Add(this.AddList);
@@ -701,6 +745,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDITORIUMBindingSource11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -789,5 +835,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aUDITORIUMCODEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Schedule;
+        private SheaduleDataSet34 sheaduleDataSet34;
+        private System.Windows.Forms.BindingSource tYPEBindingSource;
+        private SheaduleDataSet34TableAdapters.TYPETableAdapter tYPETableAdapter;
     }
 }

@@ -117,6 +117,8 @@
           <Property Name="TIME_START" Type="varchar" MaxLength="50" />
           <Property Name="TIME_END" Type="varchar" MaxLength="50" />
           <Property Name="CROSSES" Type="int" />
+          <Property Name="TYPE_TIME_START" Type="date" />
+          <Property Name="TYPE_TIME_END" Type="date" />
         </EntityType>-->
   <Association Name="FK_GROUPS_FACULTY">
     <End Role="FACULTY" Type="Self.FACULTY" Multiplicity="0..1" />

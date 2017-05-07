@@ -222,7 +222,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="SheaduleEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SheaduleContext" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ACTIVITY" EntityType="Self.ACTIVITY" />
     <EntitySet Name="AUDITORIUM" EntityType="Self.AUDITORIUM" />
     <EntitySet Name="DISCIPLINE" EntityType="Self.DISCIPLINE" />

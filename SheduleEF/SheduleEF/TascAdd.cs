@@ -12,11 +12,11 @@ namespace SheduleEF
 {
     public partial class TascAdd : Form
     {
-        private SheaduleEntities db;
+        private SheaduleContext db;
         public TascAdd()
         {
             InitializeComponent();
-            db=new SheaduleEntities();
+            db=new SheaduleContext();
             Activity.DropDownStyle =
                 Building.DropDownStyle =
                     Course.DropDownStyle =

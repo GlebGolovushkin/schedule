@@ -20,7 +20,9 @@ namespace SheduleEF
     public partial class Main : Form
     {
         string s, password = "password123";
-        private SheaduleEntities db;
+        DateTime dateOnly = DateTime.Today;
+
+        private SheaduleContext db;
         public Main()
         {
             
@@ -55,6 +57,8 @@ namespace SheduleEF
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet35.TimeTableView". При необходимости она может быть перемещена или удалена.
+            this.timeTableViewTableAdapter4.Fill(this.sheaduleDataSet35.TimeTableView);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet32.AUDITORIUM". При необходимости она может быть перемещена или удалена.
             this.aUDITORIUMTableAdapter.Fill(this.sheaduleDataSet32.AUDITORIUM);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet31.FACULTY". При необходимости она может быть перемещена или удалена.
@@ -168,6 +172,7 @@ namespace SheduleEF
             Color activityColor = new Color();
             for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
             {
+                //var s = dataGridView3.Rows[i].Cells[13].Value.ToString();
                 if (dataGridView1.Rows[i].Cells[2].Value.ToString() == group && dataGridView1.Rows[i].Cells[1].Value.ToString() == course && Convert.ToInt32(dataGridView3.Rows[i].Cells[12].Value.ToString()) == crosses)
                 {
                     if (dataGridView1.Rows[i].Cells[5].Value.ToString() == "2")
@@ -421,7 +426,7 @@ namespace SheduleEF
                 int weeknumber;
                 int course;
                 int crosses;
-                db = new SheaduleEntities();
+                db = new SheaduleContext();
                 for (int i = 0; i < dataGridView2.SelectedCells.Count; i++)
                 {
                     course = Convert.ToInt32(comboBoxStudent2.SelectedItem.ToString());
@@ -495,7 +500,7 @@ namespace SheduleEF
                 int weeknumber;
                 string build;
                 string aud;
-                db = new SheaduleEntities();
+                db = new SheaduleContext();
                 for (int i = 0; i < dataGridView2.SelectedCells.Count; i++)
                 {
                     build = comboBox1.SelectedItem.ToString();
@@ -569,7 +574,7 @@ namespace SheduleEF
                 string time, weekdayname;
                 int weeknumber;
                 string teacher;
-                db = new SheaduleEntities();
+                db = new SheaduleContext();
                 for (int i = 0; i < dataGridView2.SelectedCells.Count; i++)
                 {
                     teacher = comboBoxTeacher3.SelectedValue.ToString();
@@ -739,7 +744,7 @@ namespace SheduleEF
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            db = new SheaduleEntities();
+            db = new SheaduleContext();
             string fc;
             if (comboBoxStudent3.SelectedValue == null)
                 fc = "ИВТФ";
@@ -803,12 +808,10 @@ namespace SheduleEF
                 aud(null, null);
             }
         }
-
-       
-
+        
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            db = new SheaduleEntities();
+            db = new SheaduleContext();
             string build;
             if (comboBox1.SelectedItem == null)
                 build = "Б";

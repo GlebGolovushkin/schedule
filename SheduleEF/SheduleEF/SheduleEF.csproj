@@ -250,6 +250,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SheaduleDataSet32.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SheaduleDataSet33.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet33.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SheaduleDataSet34.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet34.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SheaduleDataSet35.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet35.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SheaduleDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -322,6 +337,12 @@
     <Compile Include="TascAdd.Designer.cs">
       <DependentUpon>TascAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleAdd.Designer.cs">
+      <DependentUpon>ScheduleAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="TEACHER.cs">
       <DependentUpon>Shed.tt</DependentUpon>
     </Compile>
@@ -379,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TascAdd.resx">
       <DependentUpon>TascAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleAdd.resx">
+      <DependentUpon>ScheduleAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherAdd.resx">
       <DependentUpon>TeacherAdd.cs</DependentUpon>
@@ -689,6 +713,39 @@
     </None>
     <None Include="SheaduleDataSet32.xss">
       <DependentUpon>SheaduleDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet33.xsc">
+      <DependentUpon>SheaduleDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet33.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet33.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet33.xss">
+      <DependentUpon>SheaduleDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet34.xsc">
+      <DependentUpon>SheaduleDataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet34.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet34.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet34.xss">
+      <DependentUpon>SheaduleDataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet35.xsc">
+      <DependentUpon>SheaduleDataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet35.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet35.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet35.xss">
+      <DependentUpon>SheaduleDataSet35.xsd</DependentUpon>
     </None>
     <None Include="SheaduleDataSet4.xsc">
       <DependentUpon>SheaduleDataSet4.xsd</DependentUpon>
