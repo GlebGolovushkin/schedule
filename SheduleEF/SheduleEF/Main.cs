@@ -57,6 +57,10 @@ namespace SheduleEF
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet37.TimeTableView". При необходимости она может быть перемещена или удалена.
+            this.timeTableViewTableAdapter6.Fill(this.sheaduleDataSet37.TimeTableView);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet36.TimeTableView". При необходимости она может быть перемещена или удалена.
+            this.timeTableViewTableAdapter5.Fill(this.sheaduleDataSet36.TimeTableView);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet35.TimeTableView". При необходимости она может быть перемещена или удалена.
             this.timeTableViewTableAdapter4.Fill(this.sheaduleDataSet35.TimeTableView);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet32.AUDITORIUM". При необходимости она может быть перемещена или удалена.
@@ -172,8 +176,7 @@ namespace SheduleEF
             Color activityColor = new Color();
             for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
             {
-                //var s = dataGridView3.Rows[i].Cells[13].Value.ToString();
-                if (dataGridView1.Rows[i].Cells[2].Value.ToString() == group && dataGridView1.Rows[i].Cells[1].Value.ToString() == course && Convert.ToInt32(dataGridView3.Rows[i].Cells[12].Value.ToString()) == crosses)
+                if (dataGridView1.Rows[i].Cells[2].Value.ToString() == group && dataGridView1.Rows[i].Cells[1].Value.ToString() == course && Convert.ToInt32(dataGridView3.Rows[i].Cells[12].Value.ToString()) == crosses && Convert.ToDateTime(dataGridView1.Rows[i].Cells[13].Value.ToString()).Date < dateOnly && Convert.ToDateTime(dataGridView1.Rows[i].Cells[14].Value.ToString()).Date > dateOnly)
                 {
                     if (dataGridView1.Rows[i].Cells[5].Value.ToString() == "2")
                         week = 8;

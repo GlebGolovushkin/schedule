@@ -265,6 +265,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SheaduleDataSet35.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SheaduleDataSet36.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet36.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SheaduleDataSet37.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet37.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SheaduleDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -746,6 +756,28 @@
     </None>
     <None Include="SheaduleDataSet35.xss">
       <DependentUpon>SheaduleDataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet36.xsc">
+      <DependentUpon>SheaduleDataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet36.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet36.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet36.xss">
+      <DependentUpon>SheaduleDataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet37.xsc">
+      <DependentUpon>SheaduleDataSet37.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet37.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet37.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet37.xss">
+      <DependentUpon>SheaduleDataSet37.xsd</DependentUpon>
     </None>
     <None Include="SheaduleDataSet4.xsc">
       <DependentUpon>SheaduleDataSet4.xsd</DependentUpon>
