@@ -38,6 +38,16 @@
     <Property Name="FACULTY_CODE" Type="int" />
     <Property Name="GROUP_NUMBER" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="TEACHER">
     <Key>
       <PropertyRef Name="TEACHER_CODE" />
@@ -68,6 +78,16 @@
     <Property Name="WEEK_NUMBER" Type="int" />
     <Property Name="TIME_CODE" Type="int" />
     <Property Name="CROSSES" Type="int" />
+    <Property Name="TYPE_CODE" Type="int" />
+  </EntityType>
+  <EntityType Name="TYPE">
+    <Key>
+      <PropertyRef Name="TYPE_CODE" />
+    </Key>
+    <Property Name="TYPE_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPE_NAME" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="TYPE_TIME_START" Type="date" />
+    <Property Name="TYPE_TIME_END" Type="date" />
   </EntityType>
   <EntityType Name="WEEKDAY">
     <Key>
@@ -182,6 +202,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TIMETABLE_TYPE">
+    <End Role="TYPE" Type="Self.TYPE" Multiplicity="0..1" />
+    <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPE">
+        <PropertyRef Name="TYPE_CODE" />
+      </Principal>
+      <Dependent Role="TIMETABLE">
+        <PropertyRef Name="TYPE_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TIMETABLE_WEEKDAY">
     <End Role="WEEKDAY" Type="Self.WEEKDAY" Multiplicity="0..1" />
     <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
@@ -200,9 +232,11 @@
     <EntitySet Name="DISCIPLINE" EntityType="Self.DISCIPLINE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FACULTY" EntityType="Self.FACULTY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GROUPS" EntityType="Self.GROUPS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TEACHER" EntityType="Self.TEACHER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TIME" EntityType="Self.TIME" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TIMETABLE" EntityType="Self.TIMETABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TYPE" EntityType="Self.TYPE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WEEKDAY" EntityType="Self.WEEKDAY" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_GROUPS_FACULTY" Association="Self.FK_GROUPS_FACULTY">
       <End Role="FACULTY" EntitySet="FACULTY" />
@@ -230,6 +264,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_TIMETABLE_TIME" Association="Self.FK_TIMETABLE_TIME">
       <End Role="TIME" EntitySet="TIME" />
+      <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIMETABLE_TYPE" Association="Self.FK_TIMETABLE_TYPE">
+      <End Role="TYPE" EntitySet="TYPE" />
       <End Role="TIMETABLE" EntitySet="TIMETABLE" />
     </AssociationSet>
     <AssociationSet Name="FK_TIMETABLE_WEEKDAY" Association="Self.FK_TIMETABLE_WEEKDAY">

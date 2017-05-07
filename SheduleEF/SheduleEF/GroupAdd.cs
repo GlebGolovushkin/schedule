@@ -12,11 +12,11 @@ namespace SheduleEF
 {
     public partial class GroupAdd : Form
     {
-        SheaduleContext db;
+        SheaduleEntities db;
         public GroupAdd()
         {
             InitializeComponent();
-            db = new SheaduleContext();
+            db = new SheaduleEntities();
             FacultyName.DropDownStyle = ComboBoxStyle.DropDownList;
             FacultyName.SelectedIndex = 0;
         }

@@ -12,12 +12,20 @@ namespace SheduleEF
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class TYPE
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TYPE()
+        {
+            this.TIMETABLE = new HashSet<TIMETABLE>();
+        }
+    
+        public int TYPE_CODE { get; set; }
+        public string TYPE_NAME { get; set; }
+        public Nullable<System.DateTime> TYPE_TIME_START { get; set; }
+        public Nullable<System.DateTime> TYPE_TIME_END { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TIMETABLE> TIMETABLE { get; set; }
     }
 }

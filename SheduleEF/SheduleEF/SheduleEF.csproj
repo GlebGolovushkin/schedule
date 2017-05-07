@@ -337,6 +337,9 @@
     <Compile Include="TIMETABLE.cs">
       <DependentUpon>Shed.tt</DependentUpon>
     </Compile>
+    <Compile Include="TYPE.cs">
+      <DependentUpon>Shed.tt</DependentUpon>
+    </Compile>
     <Compile Include="WEEKDAY.cs">
       <DependentUpon>Shed.tt</DependentUpon>
     </Compile>

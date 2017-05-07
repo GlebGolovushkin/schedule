@@ -12,7 +12,7 @@ namespace SheduleEF
 {
     public partial class TascAddStudent : Form
     {
-        private SheaduleContext db;
+        private SheaduleEntities db;
         private string day;
         private string time;
         private int group;
@@ -28,7 +28,7 @@ namespace SheduleEF
             this.course = course;
             this.weeknumber = weeknumber;
             InitializeComponent();
-            db=new SheaduleContext();
+            db=new SheaduleEntities();
             Activity.DropDownStyle =
                 Building.DropDownStyle =
                         Auditor.DropDownStyle =

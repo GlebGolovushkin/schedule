@@ -13,10 +13,10 @@ namespace SheduleEF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SheaduleContext : DbContext
+    public partial class SheaduleEntities : DbContext
     {
-        public SheaduleContext()
-            : base("name=SheaduleContext")
+        public SheaduleEntities()
+            : base("name=SheaduleEntities")
         {
         }
     
@@ -30,9 +30,11 @@ namespace SheduleEF
         public virtual DbSet<DISCIPLINE> DISCIPLINE { get; set; }
         public virtual DbSet<FACULTY> FACULTY { get; set; }
         public virtual DbSet<GROUPS> GROUPS { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TEACHER> TEACHER { get; set; }
         public virtual DbSet<TIME> TIME { get; set; }
         public virtual DbSet<TIMETABLE> TIMETABLE { get; set; }
+        public virtual DbSet<TYPE> TYPE { get; set; }
         public virtual DbSet<WEEKDAY> WEEKDAY { get; set; }
     }
 }

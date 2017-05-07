@@ -12,11 +12,11 @@ namespace SheduleEF
 {
     public partial class TeacherAdd : Form
     {
-        SheaduleContext db;
+        SheaduleEntities db;
         public TeacherAdd()
         {
             InitializeComponent();
-            db = new SheaduleContext();
+            db = new SheaduleEntities();
         }
 
         private void button1_Click(object sender, EventArgs e)

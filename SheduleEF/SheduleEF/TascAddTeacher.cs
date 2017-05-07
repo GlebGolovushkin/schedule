@@ -16,11 +16,11 @@ namespace SheduleEF
         string time;
         string weekday;
         int weeknumber;
-        private SheaduleContext db;
+        private SheaduleEntities db;
         public TascAddTeacher(string teacher,string time,string weekday,int weeknumber)
         {
             InitializeComponent();
-            db=new SheaduleContext();
+            db=new SheaduleEntities();
             Activity.DropDownStyle =
                 Building.DropDownStyle =
                     Course.DropDownStyle =

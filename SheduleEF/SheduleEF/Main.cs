@@ -20,7 +20,7 @@ namespace SheduleEF
     public partial class Main : Form
     {
         string s, password = "password123";
-        private SheaduleContext db;
+        private SheaduleEntities db;
         public Main()
         {
             
@@ -421,7 +421,7 @@ namespace SheduleEF
                 int weeknumber;
                 int course;
                 int crosses;
-                db = new SheaduleContext();
+                db = new SheaduleEntities();
                 for (int i = 0; i < dataGridView2.SelectedCells.Count; i++)
                 {
                     course = Convert.ToInt32(comboBoxStudent2.SelectedItem.ToString());
@@ -495,7 +495,7 @@ namespace SheduleEF
                 int weeknumber;
                 string build;
                 string aud;
-                db = new SheaduleContext();
+                db = new SheaduleEntities();
                 for (int i = 0; i < dataGridView2.SelectedCells.Count; i++)
                 {
                     build = comboBox1.SelectedItem.ToString();
@@ -569,7 +569,7 @@ namespace SheduleEF
                 string time, weekdayname;
                 int weeknumber;
                 string teacher;
-                db = new SheaduleContext();
+                db = new SheaduleEntities();
                 for (int i = 0; i < dataGridView2.SelectedCells.Count; i++)
                 {
                     teacher = comboBoxTeacher3.SelectedValue.ToString();
@@ -739,7 +739,7 @@ namespace SheduleEF
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            db = new SheaduleContext();
+            db = new SheaduleEntities();
             string fc;
             if (comboBoxStudent3.SelectedValue == null)
                 fc = "ИВТФ";
@@ -808,7 +808,7 @@ namespace SheduleEF
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            db = new SheaduleContext();
+            db = new SheaduleEntities();
             string build;
             if (comboBox1.SelectedItem == null)
                 build = "Б";

@@ -17,7 +17,7 @@ namespace SheduleEF
         string weekday;
         private int weeknumber;
         string time;
-        private SheaduleContext db;
+        private SheaduleEntities db;
         public TascAddAud(string build,string aud,string weekday,int weeknumber, string time)
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace SheduleEF
             this.weekday = weekday;
             this.weeknumber = weeknumber;
             this.time = time;
-            db=new SheaduleContext();
+            db=new SheaduleEntities();
             Activity.DropDownStyle =
                     Course.DropDownStyle =
                             Discipline.DropDownStyle =

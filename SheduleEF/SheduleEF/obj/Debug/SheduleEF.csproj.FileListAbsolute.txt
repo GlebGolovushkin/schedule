@@ -37,7 +37,6 @@ C:\Schedule\SheduleEF\SheduleEF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Schedule\SheduleEF\SheduleEF\bin\Debug\EPPlus.xml
 C:\Schedule\SheduleEF\SheduleEF\bin\Debug\ru\EntityFramework.resources.dll
 C:\Schedule\SheduleEF\SheduleEF\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
-C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.csprojResolveAssemblyReference.cache
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Admin.resources
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Auditor.resources
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.DisciplineAdd.resources

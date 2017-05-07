@@ -44,6 +44,16 @@
     <NavigationProperty Name="FACULTY" Relationship="Self.FK_GROUPS_FACULTY" FromRole="GROUPS" ToRole="FACULTY" />
     <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_GROUPS" FromRole="GROUPS" ToRole="TIMETABLE" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="TEACHER">
     <Key>
       <PropertyRef Name="TEACHER_CODE" />
@@ -76,13 +86,25 @@
     <Property Name="WEEK_NUMBER" Type="Int32" />
     <Property Name="TIME_CODE" Type="Int32" />
     <Property Name="CROSSES" Type="Int32" />
+    <Property Name="TYPE_CODE" Type="Int32" />
     <NavigationProperty Name="ACTIVITY" Relationship="Self.FK_TIMETABLE_ACTIVITY" FromRole="TIMETABLE" ToRole="ACTIVITY" />
     <NavigationProperty Name="AUDITORIUM" Relationship="Self.FK_TIMETABLE_AUDITORIUM" FromRole="TIMETABLE" ToRole="AUDITORIUM" />
     <NavigationProperty Name="DISCIPLINE" Relationship="Self.FK_TIMETABLE_DISCIPLINE" FromRole="TIMETABLE" ToRole="DISCIPLINE" />
     <NavigationProperty Name="GROUPS" Relationship="Self.FK_TIMETABLE_GROUPS" FromRole="TIMETABLE" ToRole="GROUPS" />
     <NavigationProperty Name="TEACHER" Relationship="Self.FK_TIMETABLE_TEACHER" FromRole="TIMETABLE" ToRole="TEACHER" />
     <NavigationProperty Name="TIME" Relationship="Self.FK_TIMETABLE_TIME" FromRole="TIMETABLE" ToRole="TIME" />
+    <NavigationProperty Name="TYPE" Relationship="Self.FK_TIMETABLE_TYPE" FromRole="TIMETABLE" ToRole="TYPE" />
     <NavigationProperty Name="WEEKDAY" Relationship="Self.FK_TIMETABLE_WEEKDAY" FromRole="TIMETABLE" ToRole="WEEKDAY" />
+  </EntityType>
+  <EntityType Name="TYPE">
+    <Key>
+      <PropertyRef Name="TYPE_CODE" />
+    </Key>
+    <Property Name="TYPE_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPE_NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TYPE_TIME_START" Type="DateTime" Precision="0" />
+    <Property Name="TYPE_TIME_END" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_TYPE" FromRole="TYPE" ToRole="TIMETABLE" />
   </EntityType>
   <EntityType Name="WEEKDAY">
     <Key>
@@ -176,6 +198,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TIMETABLE_TYPE">
+    <End Role="TYPE" Type="Self.TYPE" Multiplicity="0..1" />
+    <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPE">
+        <PropertyRef Name="TYPE_CODE" />
+      </Principal>
+      <Dependent Role="TIMETABLE">
+        <PropertyRef Name="TYPE_CODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TIMETABLE_WEEKDAY">
     <End Role="WEEKDAY" Type="Self.WEEKDAY" Multiplicity="0..1" />
     <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
@@ -188,15 +222,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="SheaduleContext" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SheaduleEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ACTIVITY" EntityType="Self.ACTIVITY" />
     <EntitySet Name="AUDITORIUM" EntityType="Self.AUDITORIUM" />
     <EntitySet Name="DISCIPLINE" EntityType="Self.DISCIPLINE" />
     <EntitySet Name="FACULTY" EntityType="Self.FACULTY" />
     <EntitySet Name="GROUPS" EntityType="Self.GROUPS" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TEACHER" EntityType="Self.TEACHER" />
     <EntitySet Name="TIME" EntityType="Self.TIME" />
     <EntitySet Name="TIMETABLE" EntityType="Self.TIMETABLE" />
+    <EntitySet Name="TYPE" EntityType="Self.TYPE" />
     <EntitySet Name="WEEKDAY" EntityType="Self.WEEKDAY" />
     <AssociationSet Name="FK_TIMETABLE_ACTIVITY" Association="Self.FK_TIMETABLE_ACTIVITY">
       <End Role="ACTIVITY" EntitySet="ACTIVITY" />
@@ -224,6 +260,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_TIMETABLE_TIME" Association="Self.FK_TIMETABLE_TIME">
       <End Role="TIME" EntitySet="TIME" />
+      <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIMETABLE_TYPE" Association="Self.FK_TIMETABLE_TYPE">
+      <End Role="TYPE" EntitySet="TYPE" />
       <End Role="TIMETABLE" EntitySet="TIMETABLE" />
     </AssociationSet>
     <AssociationSet Name="FK_TIMETABLE_WEEKDAY" Association="Self.FK_TIMETABLE_WEEKDAY">
