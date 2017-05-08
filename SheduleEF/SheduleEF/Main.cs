@@ -376,7 +376,7 @@ namespace SheduleEF
             Color activityColor = new Color();
             for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
             {
-                if (dataGridView1.Rows[i].Cells[7].Value.ToString() == teacher )
+                if (dataGridView1.Rows[i].Cells[7].Value.ToString() == teacher && Convert.ToInt32(dataGridView3.Rows[i].Cells[12].Value.ToString()) == crosses && Convert.ToDateTime(dataGridView1.Rows[i].Cells[13].Value.ToString()).Date < dateOnly && Convert.ToDateTime(dataGridView1.Rows[i].Cells[14].Value.ToString()).Date > dateOnly)
                 {
                     if (dataGridView1.Rows[i].Cells[5].Value.ToString() == "2")
                         week = 8;
@@ -908,7 +908,7 @@ namespace SheduleEF
             Color activityColor = new Color();
             for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
             {
-                if (dataGridView1.Rows[i].Cells[3].Value.ToString() == build && dataGridView1.Rows[i].Cells[4].Value.ToString() == aud)
+                if (dataGridView1.Rows[i].Cells[3].Value.ToString() == build && dataGridView1.Rows[i].Cells[4].Value.ToString() == aud && Convert.ToDateTime(dataGridView1.Rows[i].Cells[13].Value.ToString()).Date < dateOnly && Convert.ToDateTime(dataGridView1.Rows[i].Cells[14].Value.ToString()).Date > dateOnly)
                 {
                     if (dataGridView1.Rows[i].Cells[5].Value.ToString() == "2")
                         week = 8;
