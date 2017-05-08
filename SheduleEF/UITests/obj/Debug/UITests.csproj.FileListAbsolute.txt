@@ -1,0 +1,14 @@
+C:\Schedule\SheduleEF\UITests\bin\Debug\Default.srprofile
+C:\Schedule\SheduleEF\UITests\bin\Debug\UITests.dll.config
+C:\Schedule\SheduleEF\UITests\bin\Debug\UITests.dll
+C:\Schedule\SheduleEF\UITests\bin\Debug\UITests.pdb
+C:\Schedule\SheduleEF\UITests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Schedule\SheduleEF\UITests\bin\Debug\SpecRun.SpecFlowPlugin.dll
+C:\Schedule\SheduleEF\UITests\bin\Debug\TechTalk.SpecFlow.dll
+C:\Schedule\SheduleEF\UITests\bin\Debug\TechTalk.SpecRun.dll
+C:\Schedule\SheduleEF\UITests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Schedule\SheduleEF\UITests\obj\Debug\UITests.csprojResolveAssemblyReference.cache
+C:\Schedule\SheduleEF\UITests\obj\Debug\UITests.dll
+C:\Schedule\SheduleEF\UITests\obj\Debug\UITests.pdb
+C:\Schedule\SheduleEF\UITests\bin\Debug\nunit.framework.dll
+C:\Schedule\SheduleEF\UITests\bin\Debug\nunit.framework.xml
