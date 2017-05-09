@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SheduleEF", "SheduleEF\SheduleEF.csproj", "{AF0D0602-1579-4A59-BF46-F4C12038B620}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITests", "UITests\UITests.csproj", "{B461A74B-096A-479A-B1C9-41AA7D4F92F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF0D0602-1579-4A59-BF46-F4C12038B620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF0D0602-1579-4A59-BF46-F4C12038B620}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF0D0602-1579-4A59-BF46-F4C12038B620}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF0D0602-1579-4A59-BF46-F4C12038B620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B461A74B-096A-479A-B1C9-41AA7D4F92F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B461A74B-096A-479A-B1C9-41AA7D4F92F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B461A74B-096A-479A-B1C9-41AA7D4F92F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B461A74B-096A-479A-B1C9-41AA7D4F92F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

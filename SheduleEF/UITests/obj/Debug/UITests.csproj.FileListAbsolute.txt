@@ -12,3 +12,6 @@ C:\Schedule\SheduleEF\UITests\obj\Debug\UITests.dll
 C:\Schedule\SheduleEF\UITests\obj\Debug\UITests.pdb
 C:\Schedule\SheduleEF\UITests\bin\Debug\nunit.framework.dll
 C:\Schedule\SheduleEF\UITests\bin\Debug\nunit.framework.xml
+C:\Schedule\SheduleEF\UITests\bin\Debug\TestStack.White.dll
+C:\Schedule\SheduleEF\UITests\bin\Debug\TestStack.White.pdb
+C:\Schedule\SheduleEF\UITests\bin\Debug\TestStack.White.xml

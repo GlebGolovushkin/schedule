@@ -17,13 +17,13 @@ namespace UITests
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("UITests", SourceFile="UITests.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("UITests", SourceFile="UITest.feature", SourceLine=0)]
     public partial class UITestsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "UITests.feature"
+#line 1 "UITest.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
