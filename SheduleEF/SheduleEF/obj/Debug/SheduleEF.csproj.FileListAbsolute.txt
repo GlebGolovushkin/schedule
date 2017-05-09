@@ -51,3 +51,9 @@ C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.TeacherAdd.resources
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.csproj.GenerateResource.Cache
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.ScheduleAdd.resources
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.csprojResolveAssemblyReference.cache
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\ff-MR\SheduleEF.resources.dll
+C:\Schedule\SheduleEF\SheduleEF\bin\Debug\ja\SheduleEF.resources.dll
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Admin.ff-MR.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Admin.ja.resources
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\ff-MR\SheduleEF.resources.dll
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\ja\SheduleEF.resources.dll

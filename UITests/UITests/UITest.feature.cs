@@ -115,16 +115,34 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Test tool tip menu Admin", SourceLine=20)]
-        public virtual void TestToolTipMenuAdmin()
+        [TechTalk.SpecRun.ScenarioAttribute("Test tool tip menu Admin and fail pass", SourceLine=20)]
+        public virtual void TestToolTipMenuAdminAndFailPass()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test tool tip menu Admin", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test tool tip menu Admin and fail pass", ((string[])(null)));
 #line 21
 this.ScenarioSetup(scenarioInfo);
 #line 22
  testRunner.When("the user sets \'Администратор\' in tool tip menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
- testRunner.Then("\'Б-306\' schedule is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the user sets \'123\' as admin password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+ testRunner.Then("pop up appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Test tool tip menu Admin and true pass", SourceLine=25)]
+        public virtual void TestToolTipMenuAdminAndTruePass()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test tool tip menu Admin and true pass", ((string[])(null)));
+#line 26
+this.ScenarioSetup(scenarioInfo);
+#line 27
+ testRunner.When("the user sets \'Администратор\' in tool tip menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+ testRunner.When("the user sets \'password123\' as admin password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+ testRunner.Then("pop up appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

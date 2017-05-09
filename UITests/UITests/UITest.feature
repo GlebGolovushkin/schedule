@@ -18,6 +18,12 @@ Scenario: Test Auditor table
 		And the user sets '306' auditor
 	Then 'Б-306' schedule is opened 
 
-Scenario: Test tool tip menu Admin
+Scenario: Test tool tip menu Admin and fail pass
 	When the user sets 'Администратор' in tool tip menu
-	Then 'Б-306' schedule is opened 
+	When the user sets '123' as admin password
+	Then pop up appears
+
+Scenario: Test tool tip menu Admin and true pass
+	When the user sets 'Администратор' in tool tip menu
+	When the user sets 'password123' as admin password
+	Then pop up appears

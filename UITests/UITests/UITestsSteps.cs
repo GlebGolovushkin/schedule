@@ -5,7 +5,9 @@ using TestStack.White;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.ListBoxItems;
+using TestStack.White.UIItems.MenuItems;
 using TestStack.White.UIItems.WindowItems;
+using TestStack.White.UIItems.WindowStripControls;
 
 namespace UITests
 {
@@ -80,6 +82,19 @@ namespace UITests
             window.Get<ComboBox>("comboBoxTeacher3").Select(teacher);
         }
 
+        [Then(@"pop up appears")]
+        public void ThenPopUpWithTextAppears()
+        {
+            Assert.NotNull(window.MessageBox(""));
+        }
+
+        [When(@"the user sets '(.*)' as admin password")]
+        public void WhenTheUserSetsAsAdminPassword(string password)
+        {
+            window.Get<TextBox>("textBox1").SetValue(password);
+            window.Get<Button>("button1").Click();
+        }
+
         [When(@"the user sets '(.*)' building")]
         public void WhenTheUserSetsBuilding(string building)
         {
@@ -101,7 +116,7 @@ namespace UITests
         [When(@"the user sets '(.*)' in tool tip menu")]
         public void WhenTheUserSetsInToolTipMenu(string toolTipItem)
         {
-            window.Get<ToolTip>("menuStrip1").SetValue(toolTipItem);
+            window.Get<MenuBar>("menuStrip1").MenuItem("Файл",toolTipItem).Click();
         }
     }
 }
