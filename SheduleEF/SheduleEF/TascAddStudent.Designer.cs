@@ -113,9 +113,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.Schedule = new System.Windows.Forms.ComboBox();
-            this.sheaduleDataSet34 = new SheduleEF.SheaduleDataSet34();
             this.tYPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sheaduleDataSet34 = new SheduleEF.SheaduleDataSet34();
             this.tYPETableAdapter = new SheduleEF.SheaduleDataSet34TableAdapters.TYPETableAdapter();
+            this.sheaduleDataSet38 = new SheduleEF.SheaduleDataSet38();
+            this.tYPEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tYPETableAdapter1 = new SheduleEF.SheaduleDataSet38TableAdapters.TYPETableAdapter();
+            this.sheaduleDataSet41 = new SheduleEF.SheaduleDataSet41();
+            this.aCTIVITYBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.aCTIVITYTableAdapter2 = new SheduleEF.SheaduleDataSet41TableAdapters.ACTIVITYTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).BeginInit();
@@ -158,13 +164,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDITORIUMBindingSource11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tYPEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet38)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // Activity
             // 
-            this.Activity.DataSource = this.aCTIVITYBindingSource1;
+            this.Activity.DataSource = this.aCTIVITYBindingSource2;
             this.Activity.DisplayMember = "ACTIVITY_TYPE_NAME";
             this.Activity.FormattingEnabled = true;
             this.Activity.Location = new System.Drawing.Point(12, 33);
@@ -661,19 +671,47 @@
             this.Schedule.TabIndex = 29;
             this.Schedule.ValueMember = "TYPE_NAME";
             // 
-            // sheaduleDataSet34
-            // 
-            this.sheaduleDataSet34.DataSetName = "SheaduleDataSet34";
-            this.sheaduleDataSet34.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tYPEBindingSource
             // 
             this.tYPEBindingSource.DataMember = "TYPE";
             this.tYPEBindingSource.DataSource = this.sheaduleDataSet34;
             // 
+            // sheaduleDataSet34
+            // 
+            this.sheaduleDataSet34.DataSetName = "SheaduleDataSet34";
+            this.sheaduleDataSet34.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tYPETableAdapter
             // 
             this.tYPETableAdapter.ClearBeforeFill = true;
+            // 
+            // sheaduleDataSet38
+            // 
+            this.sheaduleDataSet38.DataSetName = "SheaduleDataSet38";
+            this.sheaduleDataSet38.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tYPEBindingSource1
+            // 
+            this.tYPEBindingSource1.DataMember = "TYPE";
+            this.tYPEBindingSource1.DataSource = this.sheaduleDataSet38;
+            // 
+            // tYPETableAdapter1
+            // 
+            this.tYPETableAdapter1.ClearBeforeFill = true;
+            // 
+            // sheaduleDataSet41
+            // 
+            this.sheaduleDataSet41.DataSetName = "SheaduleDataSet41";
+            this.sheaduleDataSet41.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aCTIVITYBindingSource2
+            // 
+            this.aCTIVITYBindingSource2.DataMember = "ACTIVITY";
+            this.aCTIVITYBindingSource2.DataSource = this.sheaduleDataSet41;
+            // 
+            // aCTIVITYTableAdapter2
+            // 
+            this.aCTIVITYTableAdapter2.ClearBeforeFill = true;
             // 
             // TascAddStudent
             // 
@@ -745,8 +783,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDITORIUMBindingSource11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet34)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tYPEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet38)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tYPEBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -840,5 +882,11 @@
         private SheaduleDataSet34 sheaduleDataSet34;
         private System.Windows.Forms.BindingSource tYPEBindingSource;
         private SheaduleDataSet34TableAdapters.TYPETableAdapter tYPETableAdapter;
+        private SheaduleDataSet38 sheaduleDataSet38;
+        private System.Windows.Forms.BindingSource tYPEBindingSource1;
+        private SheaduleDataSet38TableAdapters.TYPETableAdapter tYPETableAdapter1;
+        private SheaduleDataSet41 sheaduleDataSet41;
+        private System.Windows.Forms.BindingSource aCTIVITYBindingSource2;
+        private SheaduleDataSet41TableAdapters.ACTIVITYTableAdapter aCTIVITYTableAdapter2;
     }
 }

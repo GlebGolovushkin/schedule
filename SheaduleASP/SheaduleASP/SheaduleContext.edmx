@@ -83,6 +83,16 @@
           <Property Name="WEEK_NUMBER" Type="int" />
           <Property Name="TIME_CODE" Type="int" />
           <Property Name="CROSSES" Type="int" />
+          <Property Name="TYPE_CODE" Type="int" />
+        </EntityType>
+        <EntityType Name="TYPE">
+          <Key>
+            <PropertyRef Name="TYPE_CODE" />
+          </Key>
+          <Property Name="TYPE_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TYPE_NAME" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="TYPE_TIME_START" Type="datetime" />
+          <Property Name="TYPE_TIME_END" Type="datetime" />
         </EntityType>
         <EntityType Name="WEEKDAY">
           <Key>
@@ -90,6 +100,34 @@
           </Key>
           <Property Name="WEEKDAY_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="WEEKDAY_NAME" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Sheadule.dbo.TeacherView" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="TeacherView">
+          <Property Name="TEACHER_NAME" Type="varchar" MaxLength="100" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Sheadule.dbo.TimeTableView" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="TimeTableView">
+          <Key>
+            <PropertyRef Name="TYPE_NAME" />
+          </Key>
+          <Property Name="FACULTY_NAME" Type="varchar" MaxLength="150" />
+          <Property Name="COURSE_CODE" Type="int" />
+          <Property Name="GROUP_NUMBER" Type="varchar" MaxLength="50" />
+          <Property Name="BUILDING" Type="varchar" MaxLength="50" />
+          <Property Name="AUDITORIUM_NUMBER" Type="varchar" MaxLength="10" />
+          <Property Name="WEEK_NUMBER" Type="int" />
+          <Property Name="WEEKDAY_NAME" Type="varchar" MaxLength="15" />
+          <Property Name="TEACHER_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="DISCIPLINE_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="ACTIVITY_TYPE_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="TIME_START" Type="varchar" MaxLength="50" />
+          <Property Name="TIME_END" Type="varchar" MaxLength="50" />
+          <Property Name="CROSSES" Type="int" />
+          <Property Name="TYPE_TIME_START" Type="datetime" />
+          <Property Name="TYPE_TIME_END" Type="datetime" />
+          <Property Name="TYPE_NAME" Type="nchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_GROUPS_FACULTY">
           <End Role="FACULTY" Type="Self.FACULTY" Multiplicity="0..1" />
@@ -175,6 +213,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TIMETABLE_TYPE">
+          <End Role="TYPE" Type="Self.TYPE" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPE">
+              <PropertyRef Name="TYPE_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="TYPE_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TIMETABLE_WEEKDAY">
           <End Role="WEEKDAY" Type="Self.WEEKDAY" Multiplicity="0..1" />
           <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
@@ -197,7 +247,28 @@
           <EntitySet Name="TEACHER" EntityType="Self.TEACHER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIME" EntityType="Self.TIME" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TIMETABLE" EntityType="Self.TIMETABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TYPE" EntityType="Self.TYPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WEEKDAY" EntityType="Self.WEEKDAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeTableView" EntityType="Self.TimeTableView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TimeTableView].[FACULTY_NAME] AS [FACULTY_NAME], 
+    [TimeTableView].[COURSE_CODE] AS [COURSE_CODE], 
+    [TimeTableView].[GROUP_NUMBER] AS [GROUP_NUMBER], 
+    [TimeTableView].[BUILDING] AS [BUILDING], 
+    [TimeTableView].[AUDITORIUM_NUMBER] AS [AUDITORIUM_NUMBER], 
+    [TimeTableView].[WEEK_NUMBER] AS [WEEK_NUMBER], 
+    [TimeTableView].[WEEKDAY_NAME] AS [WEEKDAY_NAME], 
+    [TimeTableView].[TEACHER_NAME] AS [TEACHER_NAME], 
+    [TimeTableView].[DISCIPLINE_NAME] AS [DISCIPLINE_NAME], 
+    [TimeTableView].[ACTIVITY_TYPE_NAME] AS [ACTIVITY_TYPE_NAME], 
+    [TimeTableView].[TIME_START] AS [TIME_START], 
+    [TimeTableView].[TIME_END] AS [TIME_END], 
+    [TimeTableView].[CROSSES] AS [CROSSES], 
+    [TimeTableView].[TYPE_TIME_START] AS [TYPE_TIME_START], 
+    [TimeTableView].[TYPE_TIME_END] AS [TYPE_TIME_END], 
+    [TimeTableView].[TYPE_NAME] AS [TYPE_NAME]
+    FROM [dbo].[TimeTableView] AS [TimeTableView]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_GROUPS_FACULTY" Association="Self.FK_GROUPS_FACULTY">
             <End Role="FACULTY" EntitySet="FACULTY" />
             <End Role="GROUPS" EntitySet="GROUPS" />
@@ -224,6 +295,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_TIMETABLE_TIME" Association="Self.FK_TIMETABLE_TIME">
             <End Role="TIME" EntitySet="TIME" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_TYPE" Association="Self.FK_TIMETABLE_TYPE">
+            <End Role="TYPE" EntitySet="TYPE" />
             <End Role="TIMETABLE" EntitySet="TIMETABLE" />
           </AssociationSet>
           <AssociationSet Name="FK_TIMETABLE_WEEKDAY" Association="Self.FK_TIMETABLE_WEEKDAY">
@@ -322,13 +397,25 @@
           <Property Name="WEEK_NUMBER" Type="Int32" />
           <Property Name="TIME_CODE" Type="Int32" />
           <Property Name="CROSSES" Type="Int32" />
+          <Property Name="TYPE_CODE" Type="Int32" />
           <NavigationProperty Name="ACTIVITY" Relationship="Self.FK_TIMETABLE_ACTIVITY" FromRole="TIMETABLE" ToRole="ACTIVITY" />
           <NavigationProperty Name="AUDITORIUM" Relationship="Self.FK_TIMETABLE_AUDITORIUM" FromRole="TIMETABLE" ToRole="AUDITORIUM" />
           <NavigationProperty Name="DISCIPLINE" Relationship="Self.FK_TIMETABLE_DISCIPLINE" FromRole="TIMETABLE" ToRole="DISCIPLINE" />
           <NavigationProperty Name="GROUPS" Relationship="Self.FK_TIMETABLE_GROUPS" FromRole="TIMETABLE" ToRole="GROUPS" />
           <NavigationProperty Name="TEACHER" Relationship="Self.FK_TIMETABLE_TEACHER" FromRole="TIMETABLE" ToRole="TEACHER" />
           <NavigationProperty Name="TIME" Relationship="Self.FK_TIMETABLE_TIME" FromRole="TIMETABLE" ToRole="TIME" />
+          <NavigationProperty Name="TYPE" Relationship="Self.FK_TIMETABLE_TYPE" FromRole="TIMETABLE" ToRole="TYPE" />
           <NavigationProperty Name="WEEKDAY" Relationship="Self.FK_TIMETABLE_WEEKDAY" FromRole="TIMETABLE" ToRole="WEEKDAY" />
+        </EntityType>
+        <EntityType Name="TYPE">
+          <Key>
+            <PropertyRef Name="TYPE_CODE" />
+          </Key>
+          <Property Name="TYPE_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TYPE_NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TYPE_TIME_START" Type="DateTime" Precision="3" />
+          <Property Name="TYPE_TIME_END" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_TYPE" FromRole="TYPE" ToRole="TIMETABLE" />
         </EntityType>
         <EntityType Name="WEEKDAY">
           <Key>
@@ -337,6 +424,27 @@
           <Property Name="WEEKDAY_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="WEEKDAY_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_WEEKDAY" FromRole="WEEKDAY" ToRole="TIMETABLE" />
+        </EntityType>
+        <EntityType Name="TimeTableView">
+          <Key>
+            <PropertyRef Name="TYPE_NAME" />
+          </Key>
+          <Property Name="FACULTY_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="COURSE_CODE" Type="Int32" />
+          <Property Name="GROUP_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BUILDING" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUDITORIUM_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="WEEK_NUMBER" Type="Int32" />
+          <Property Name="WEEKDAY_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TEACHER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DISCIPLINE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ACTIVITY_TYPE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TIME_START" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TIME_END" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CROSSES" Type="Int32" />
+          <Property Name="TYPE_TIME_START" Type="DateTime" Precision="3" />
+          <Property Name="TYPE_TIME_END" Type="DateTime" Precision="3" />
+          <Property Name="TYPE_NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
         </EntityType>
         <Association Name="FK_TIMETABLE_ACTIVITY">
           <End Role="ACTIVITY" Type="Self.ACTIVITY" Multiplicity="0..1" />
@@ -422,6 +530,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TIMETABLE_TYPE">
+          <End Role="TYPE" Type="Self.TYPE" Multiplicity="0..1" />
+          <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPE">
+              <PropertyRef Name="TYPE_CODE" />
+            </Principal>
+            <Dependent Role="TIMETABLE">
+              <PropertyRef Name="TYPE_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TIMETABLE_WEEKDAY">
           <End Role="WEEKDAY" Type="Self.WEEKDAY" Multiplicity="0..1" />
           <End Role="TIMETABLE" Type="Self.TIMETABLE" Multiplicity="*" />
@@ -444,7 +564,9 @@
           <EntitySet Name="TEACHER" EntityType="Self.TEACHER" />
           <EntitySet Name="TIME" EntityType="Self.TIME" />
           <EntitySet Name="TIMETABLE" EntityType="Self.TIMETABLE" />
+          <EntitySet Name="TYPE" EntityType="Self.TYPE" />
           <EntitySet Name="WEEKDAY" EntityType="Self.WEEKDAY" />
+          <EntitySet Name="TimeTableView" EntityType="Self.TimeTableView" />
           <AssociationSet Name="FK_TIMETABLE_ACTIVITY" Association="Self.FK_TIMETABLE_ACTIVITY">
             <End Role="ACTIVITY" EntitySet="ACTIVITY" />
             <End Role="TIMETABLE" EntitySet="TIMETABLE" />
@@ -471,6 +593,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_TIMETABLE_TIME" Association="Self.FK_TIMETABLE_TIME">
             <End Role="TIME" EntitySet="TIME" />
+            <End Role="TIMETABLE" EntitySet="TIMETABLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TIMETABLE_TYPE" Association="Self.FK_TIMETABLE_TYPE">
+            <End Role="TYPE" EntitySet="TYPE" />
             <End Role="TIMETABLE" EntitySet="TIMETABLE" />
           </AssociationSet>
           <AssociationSet Name="FK_TIMETABLE_WEEKDAY" Association="Self.FK_TIMETABLE_WEEKDAY">
@@ -569,6 +695,17 @@
                 <ScalarProperty Name="WEEK_NUMBER" ColumnName="WEEK_NUMBER" />
                 <ScalarProperty Name="TIME_CODE" ColumnName="TIME_CODE" />
                 <ScalarProperty Name="CROSSES" ColumnName="CROSSES" />
+                <ScalarProperty Name="TYPE_CODE" ColumnName="TYPE_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPE">
+            <EntityTypeMapping TypeName="SheaduleModel.TYPE">
+              <MappingFragment StoreEntitySet="TYPE">
+                <ScalarProperty Name="TYPE_CODE" ColumnName="TYPE_CODE" />
+                <ScalarProperty Name="TYPE_NAME" ColumnName="TYPE_NAME" />
+                <ScalarProperty Name="TYPE_TIME_START" ColumnName="TYPE_TIME_START" />
+                <ScalarProperty Name="TYPE_TIME_END" ColumnName="TYPE_TIME_END" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -577,6 +714,28 @@
               <MappingFragment StoreEntitySet="WEEKDAY">
                 <ScalarProperty Name="WEEKDAY_CODE" ColumnName="WEEKDAY_CODE" />
                 <ScalarProperty Name="WEEKDAY_NAME" ColumnName="WEEKDAY_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeTableView">
+            <EntityTypeMapping TypeName="SheaduleModel.TimeTableView">
+              <MappingFragment StoreEntitySet="TimeTableView">
+                <ScalarProperty Name="FACULTY_NAME" ColumnName="FACULTY_NAME" />
+                <ScalarProperty Name="COURSE_CODE" ColumnName="COURSE_CODE" />
+                <ScalarProperty Name="GROUP_NUMBER" ColumnName="GROUP_NUMBER" />
+                <ScalarProperty Name="BUILDING" ColumnName="BUILDING" />
+                <ScalarProperty Name="AUDITORIUM_NUMBER" ColumnName="AUDITORIUM_NUMBER" />
+                <ScalarProperty Name="WEEK_NUMBER" ColumnName="WEEK_NUMBER" />
+                <ScalarProperty Name="WEEKDAY_NAME" ColumnName="WEEKDAY_NAME" />
+                <ScalarProperty Name="TEACHER_NAME" ColumnName="TEACHER_NAME" />
+                <ScalarProperty Name="DISCIPLINE_NAME" ColumnName="DISCIPLINE_NAME" />
+                <ScalarProperty Name="ACTIVITY_TYPE_NAME" ColumnName="ACTIVITY_TYPE_NAME" />
+                <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+                <ScalarProperty Name="TIME_END" ColumnName="TIME_END" />
+                <ScalarProperty Name="CROSSES" ColumnName="CROSSES" />
+                <ScalarProperty Name="TYPE_TIME_START" ColumnName="TYPE_TIME_START" />
+                <ScalarProperty Name="TYPE_TIME_END" ColumnName="TYPE_TIME_END" />
+                <ScalarProperty Name="TYPE_NAME" ColumnName="TYPE_NAME" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

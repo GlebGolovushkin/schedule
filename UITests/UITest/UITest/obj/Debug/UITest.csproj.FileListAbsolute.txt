@@ -1,0 +1,38 @@
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\obj\Debug\UITest.csprojResolveAssemblyReference.cache
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\Default.srprofile
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\UITest.dll.config
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\UITest.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\UITest.pdb
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\Castle.Core.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\nunit.framework.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\SpecRun.SpecFlowPlugin.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\TechTalk.SpecFlow.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\TechTalk.SpecRun.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\TestStack.White.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\Castle.Core.xml
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\nunit.framework.xml
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\TestStack.White.pdb
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\TestStack.White.xml
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\obj\Debug\UITest.dll
+c:\users\shadaw\documents\visual studio 2015\Projects\UITest\UITest\obj\Debug\UITest.pdb
+C:\Schedule\UITests\UITest\UITest\obj\Debug\UITest.csprojResolveAssemblyReference.cache
+C:\Schedule\UITests\UITest\UITest\obj\Debug\UITest.dll
+C:\Schedule\UITests\UITest\UITest\obj\Debug\UITest.pdb
+C:\Schedule\UITests\UITest\UITest\bin\Debug\Default.srprofile
+C:\Schedule\UITests\UITest\UITest\bin\Debug\UITest.dll.config
+C:\Schedule\UITests\UITest\UITest\bin\Debug\UITest.dll
+C:\Schedule\UITests\UITest\UITest\bin\Debug\UITest.pdb
+C:\Schedule\UITests\UITest\UITest\bin\Debug\Castle.Core.dll
+C:\Schedule\UITests\UITest\UITest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Schedule\UITests\UITest\UITest\bin\Debug\nunit.framework.dll
+C:\Schedule\UITests\UITest\UITest\bin\Debug\SpecRun.SpecFlowPlugin.dll
+C:\Schedule\UITests\UITest\UITest\bin\Debug\TechTalk.SpecFlow.dll
+C:\Schedule\UITests\UITest\UITest\bin\Debug\TechTalk.SpecRun.dll
+C:\Schedule\UITests\UITest\UITest\bin\Debug\TestStack.White.dll
+C:\Schedule\UITests\UITest\UITest\bin\Debug\Castle.Core.xml
+C:\Schedule\UITests\UITest\UITest\bin\Debug\nunit.framework.xml
+C:\Schedule\UITests\UITest\UITest\bin\Debug\TestStack.White.pdb
+C:\Schedule\UITests\UITest\UITest\bin\Debug\TestStack.White.xml
+C:\Schedule\UITests\UITest\UITest\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll

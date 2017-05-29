@@ -19,11 +19,13 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-
+        
         <div class="form-horizontal">
-            <h4>Занятие</h4>
+            <h4>Расписание</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.LESSON_CODE)
+    
             <div class="form-group">
                 @Html.LabelFor(model => model.WEEKDAY_CODE, "День недели", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -31,15 +33,15 @@
                     @Html.ValidationMessageFor(model => model.WEEKDAY_CODE, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
-                @Html.LabelFor(model => model.COURSE_CODE, "Курс", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.COURSE_CODE,"Курс", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.COURSE_CODE, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.COURSE_CODE, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
                 @Html.LabelFor(model => model.GROUP_CODE, "Группа", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -47,7 +49,7 @@
                     @Html.ValidationMessageFor(model => model.GROUP_CODE, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
                 @Html.LabelFor(model => model.TEACHER_CODE, "Преподаватель", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -55,23 +57,23 @@
                     @Html.ValidationMessageFor(model => model.TEACHER_CODE, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
-                @Html.LabelFor(model => model.DISCIPLINE_CODE, "Дисциплина", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.DISCIPLINE_CODE, "Предмет", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.DropDownList("DISCIPLINE_CODE", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.DISCIPLINE_CODE, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
-                @Html.LabelFor(model => model.ACTIVITY_TYPE_CODE, "Вид", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.ACTIVITY_TYPE_CODE, "Вид занятия", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.DropDownList("ACTIVITY_TYPE_CODE", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.ACTIVITY_TYPE_CODE, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
                 @Html.LabelFor(model => model.AUDITORIUM_CODE, "Аудитория", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -79,41 +81,49 @@
                     @Html.ValidationMessageFor(model => model.AUDITORIUM_CODE, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
-                @Html.LabelFor(model => model.WEEK_NUMBER, "Номер недели", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.WEEK_NUMBER,"Номер недели", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.WEEK_NUMBER, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.WEEK_NUMBER, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
-                @Html.LabelFor(model => model.TIME_CODE, "Время начала", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.TIME_CODE, "Начало занятия", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.DropDownList("TIME_CODE", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.TIME_CODE, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
             <div class="form-group">
-                @Html.LabelFor(model => model.CROSSES, "Кресты", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.CROSSES,"Количество крестов", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.CROSSES, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.CROSSES, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.TYPE_CODE, "Расписание", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("TYPE_CODE", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TYPE_CODE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Сохранить" class="btn btn-default" />
                 </div>
             </div>
         </div>
     }
     
     <div>
-        @Html.ActionLink("Вернуться к занятиям", "Index")
+        @Html.ActionLink("Назад", "Index")
     </div>
 </body>
 </html>

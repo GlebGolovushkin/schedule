@@ -47,6 +47,23 @@
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gROUPSTableAdapter = new SheduleEF.SheaduleDataSet10TableAdapters.GROUPSTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fACULTYNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cOURSECODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gROUPNUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bUILDINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wEEKNUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wEEKDAYNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tEACHERNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dISCIPLINENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIMESTARTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIMEENDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CROSSES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TYPE_TIME_START = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TYPE_TIME_END = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeTableViewBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.sheaduleDataSet37 = new SheduleEF.SheaduleDataSet37();
             this.timeTableViewBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.sheaduleDataSet25 = new SheduleEF.SheaduleDataSet25();
             this.Print = new System.Windows.Forms.Button();
@@ -129,30 +146,14 @@
             this.отчётToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.нагрузкаПреподавателейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.нагрузкаАудиторийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сменитьПарольToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sheaduleDataSet35 = new SheduleEF.SheaduleDataSet35();
             this.timeTableViewBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.timeTableViewTableAdapter4 = new SheduleEF.SheaduleDataSet35TableAdapters.TimeTableViewTableAdapter();
             this.sheaduleDataSet36 = new SheduleEF.SheaduleDataSet36();
             this.timeTableViewBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.timeTableViewTableAdapter5 = new SheduleEF.SheaduleDataSet36TableAdapters.TimeTableViewTableAdapter();
-            this.sheaduleDataSet37 = new SheduleEF.SheaduleDataSet37();
-            this.timeTableViewBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.timeTableViewTableAdapter6 = new SheduleEF.SheaduleDataSet37TableAdapters.TimeTableViewTableAdapter();
-            this.fACULTYNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cOURSECODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gROUPNUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bUILDINGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wEEKNUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wEEKDAYNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tEACHERNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dISCIPLINENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tIMESTARTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tIMEENDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CROSSES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TYPE_TIME_START = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TYPE_TIME_END = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gROUPSBindingSource)).BeginInit();
@@ -160,6 +161,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet25)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -185,8 +188,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource6)).BeginInit();
             this.SuspendLayout();
             // 
             // AddNewItem
@@ -363,6 +364,121 @@
             this.dataGridView1.Size = new System.Drawing.Size(41, 26);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.Visible = false;
+            // 
+            // fACULTYNAMEDataGridViewTextBoxColumn
+            // 
+            this.fACULTYNAMEDataGridViewTextBoxColumn.DataPropertyName = "FACULTY_NAME";
+            this.fACULTYNAMEDataGridViewTextBoxColumn.HeaderText = "FACULTY_NAME";
+            this.fACULTYNAMEDataGridViewTextBoxColumn.Name = "fACULTYNAMEDataGridViewTextBoxColumn";
+            this.fACULTYNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cOURSECODEDataGridViewTextBoxColumn
+            // 
+            this.cOURSECODEDataGridViewTextBoxColumn.DataPropertyName = "COURSE_CODE";
+            this.cOURSECODEDataGridViewTextBoxColumn.HeaderText = "COURSE_CODE";
+            this.cOURSECODEDataGridViewTextBoxColumn.Name = "cOURSECODEDataGridViewTextBoxColumn";
+            this.cOURSECODEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gROUPNUMBERDataGridViewTextBoxColumn
+            // 
+            this.gROUPNUMBERDataGridViewTextBoxColumn.DataPropertyName = "GROUP_NUMBER";
+            this.gROUPNUMBERDataGridViewTextBoxColumn.HeaderText = "GROUP_NUMBER";
+            this.gROUPNUMBERDataGridViewTextBoxColumn.Name = "gROUPNUMBERDataGridViewTextBoxColumn";
+            this.gROUPNUMBERDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bUILDINGDataGridViewTextBoxColumn
+            // 
+            this.bUILDINGDataGridViewTextBoxColumn.DataPropertyName = "BUILDING";
+            this.bUILDINGDataGridViewTextBoxColumn.HeaderText = "BUILDING";
+            this.bUILDINGDataGridViewTextBoxColumn.Name = "bUILDINGDataGridViewTextBoxColumn";
+            this.bUILDINGDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aUDITORIUMNUMBERDataGridViewTextBoxColumn
+            // 
+            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn.DataPropertyName = "AUDITORIUM_NUMBER";
+            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn.HeaderText = "AUDITORIUM_NUMBER";
+            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn.Name = "aUDITORIUMNUMBERDataGridViewTextBoxColumn";
+            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wEEKNUMBERDataGridViewTextBoxColumn
+            // 
+            this.wEEKNUMBERDataGridViewTextBoxColumn.DataPropertyName = "WEEK_NUMBER";
+            this.wEEKNUMBERDataGridViewTextBoxColumn.HeaderText = "WEEK_NUMBER";
+            this.wEEKNUMBERDataGridViewTextBoxColumn.Name = "wEEKNUMBERDataGridViewTextBoxColumn";
+            this.wEEKNUMBERDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wEEKDAYNAMEDataGridViewTextBoxColumn
+            // 
+            this.wEEKDAYNAMEDataGridViewTextBoxColumn.DataPropertyName = "WEEKDAY_NAME";
+            this.wEEKDAYNAMEDataGridViewTextBoxColumn.HeaderText = "WEEKDAY_NAME";
+            this.wEEKDAYNAMEDataGridViewTextBoxColumn.Name = "wEEKDAYNAMEDataGridViewTextBoxColumn";
+            this.wEEKDAYNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tEACHERNAMEDataGridViewTextBoxColumn
+            // 
+            this.tEACHERNAMEDataGridViewTextBoxColumn.DataPropertyName = "TEACHER_NAME";
+            this.tEACHERNAMEDataGridViewTextBoxColumn.HeaderText = "TEACHER_NAME";
+            this.tEACHERNAMEDataGridViewTextBoxColumn.Name = "tEACHERNAMEDataGridViewTextBoxColumn";
+            this.tEACHERNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dISCIPLINENAMEDataGridViewTextBoxColumn
+            // 
+            this.dISCIPLINENAMEDataGridViewTextBoxColumn.DataPropertyName = "DISCIPLINE_NAME";
+            this.dISCIPLINENAMEDataGridViewTextBoxColumn.HeaderText = "DISCIPLINE_NAME";
+            this.dISCIPLINENAMEDataGridViewTextBoxColumn.Name = "dISCIPLINENAMEDataGridViewTextBoxColumn";
+            this.dISCIPLINENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aCTIVITYTYPENAMEDataGridViewTextBoxColumn
+            // 
+            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn.DataPropertyName = "ACTIVITY_TYPE_NAME";
+            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn.HeaderText = "ACTIVITY_TYPE_NAME";
+            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn.Name = "aCTIVITYTYPENAMEDataGridViewTextBoxColumn";
+            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tIMESTARTDataGridViewTextBoxColumn
+            // 
+            this.tIMESTARTDataGridViewTextBoxColumn.DataPropertyName = "TIME_START";
+            this.tIMESTARTDataGridViewTextBoxColumn.HeaderText = "TIME_START";
+            this.tIMESTARTDataGridViewTextBoxColumn.Name = "tIMESTARTDataGridViewTextBoxColumn";
+            this.tIMESTARTDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tIMEENDDataGridViewTextBoxColumn
+            // 
+            this.tIMEENDDataGridViewTextBoxColumn.DataPropertyName = "TIME_END";
+            this.tIMEENDDataGridViewTextBoxColumn.HeaderText = "TIME_END";
+            this.tIMEENDDataGridViewTextBoxColumn.Name = "tIMEENDDataGridViewTextBoxColumn";
+            this.tIMEENDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // CROSSES
+            // 
+            this.CROSSES.DataPropertyName = "CROSSES";
+            this.CROSSES.HeaderText = "CROSSES";
+            this.CROSSES.Name = "CROSSES";
+            this.CROSSES.ReadOnly = true;
+            // 
+            // TYPE_TIME_START
+            // 
+            this.TYPE_TIME_START.DataPropertyName = "TYPE_TIME_START";
+            this.TYPE_TIME_START.HeaderText = "TYPE_TIME_START";
+            this.TYPE_TIME_START.Name = "TYPE_TIME_START";
+            this.TYPE_TIME_START.ReadOnly = true;
+            // 
+            // TYPE_TIME_END
+            // 
+            this.TYPE_TIME_END.DataPropertyName = "TYPE_TIME_END";
+            this.TYPE_TIME_END.HeaderText = "TYPE_TIME_END";
+            this.TYPE_TIME_END.Name = "TYPE_TIME_END";
+            this.TYPE_TIME_END.ReadOnly = true;
+            // 
+            // timeTableViewBindingSource6
+            // 
+            this.timeTableViewBindingSource6.DataMember = "TimeTableView";
+            this.timeTableViewBindingSource6.DataSource = this.sheaduleDataSet37;
+            // 
+            // sheaduleDataSet37
+            // 
+            this.sheaduleDataSet37.DataSetName = "SheaduleDataSet37";
+            this.sheaduleDataSet37.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // timeTableViewBindingSource2
             // 
@@ -940,7 +1056,8 @@
             this.добавитьToolStripMenuItem1,
             this.сохранитьToolStripMenuItem2,
             this.распечататьToolStripMenuItem1,
-            this.отчётToolStripMenuItem});
+            this.отчётToolStripMenuItem,
+            this.сменитьПарольToolStripMenuItem});
             this.файлToolStripMenuItem1.Name = "файлToolStripMenuItem1";
             this.файлToolStripMenuItem1.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem1.Text = "Файл";
@@ -948,7 +1065,7 @@
             // добавитьToolStripMenuItem1
             // 
             this.добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
-            this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
+            this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.добавитьToolStripMenuItem1.Text = "Добавить";
             this.добавитьToolStripMenuItem1.Click += new System.EventHandler(this.добавитьToolStripMenuItem1_Click);
             // 
@@ -958,7 +1075,7 @@
             this.таблицейExcelToolStripMenuItem,
             this.изображениемToolStripMenuItem});
             this.сохранитьToolStripMenuItem2.Name = "сохранитьToolStripMenuItem2";
-            this.сохранитьToolStripMenuItem2.Size = new System.Drawing.Size(141, 22);
+            this.сохранитьToolStripMenuItem2.Size = new System.Drawing.Size(165, 22);
             this.сохранитьToolStripMenuItem2.Text = "Сохранить";
             // 
             // таблицейExcelToolStripMenuItem
@@ -978,7 +1095,7 @@
             // распечататьToolStripMenuItem1
             // 
             this.распечататьToolStripMenuItem1.Name = "распечататьToolStripMenuItem1";
-            this.распечататьToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
+            this.распечататьToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.распечататьToolStripMenuItem1.Text = "Распечатать";
             this.распечататьToolStripMenuItem1.Click += new System.EventHandler(this.распечататьToolStripMenuItem1_Click);
             // 
@@ -988,7 +1105,7 @@
             this.нагрузкаПреподавателейToolStripMenuItem,
             this.нагрузкаАудиторийToolStripMenuItem});
             this.отчётToolStripMenuItem.Name = "отчётToolStripMenuItem";
-            this.отчётToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.отчётToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.отчётToolStripMenuItem.Text = "Отчёт";
             // 
             // нагрузкаПреподавателейToolStripMenuItem
@@ -1004,6 +1121,13 @@
             this.нагрузкаАудиторийToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.нагрузкаАудиторийToolStripMenuItem.Text = "Нагрузка аудиторий";
             this.нагрузкаАудиторийToolStripMenuItem.Click += new System.EventHandler(this.нагрузкаАудиторийToolStripMenuItem_Click);
+            // 
+            // сменитьПарольToolStripMenuItem
+            // 
+            this.сменитьПарольToolStripMenuItem.Name = "сменитьПарольToolStripMenuItem";
+            this.сменитьПарольToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.сменитьПарольToolStripMenuItem.Text = "Сменить пароль";
+            this.сменитьПарольToolStripMenuItem.Click += new System.EventHandler(this.сменитьПарольToolStripMenuItem_Click);
             // 
             // sheaduleDataSet35
             // 
@@ -1033,124 +1157,9 @@
             // 
             this.timeTableViewTableAdapter5.ClearBeforeFill = true;
             // 
-            // sheaduleDataSet37
-            // 
-            this.sheaduleDataSet37.DataSetName = "SheaduleDataSet37";
-            this.sheaduleDataSet37.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // timeTableViewBindingSource6
-            // 
-            this.timeTableViewBindingSource6.DataMember = "TimeTableView";
-            this.timeTableViewBindingSource6.DataSource = this.sheaduleDataSet37;
-            // 
             // timeTableViewTableAdapter6
             // 
             this.timeTableViewTableAdapter6.ClearBeforeFill = true;
-            // 
-            // fACULTYNAMEDataGridViewTextBoxColumn
-            // 
-            this.fACULTYNAMEDataGridViewTextBoxColumn.DataPropertyName = "FACULTY_NAME";
-            this.fACULTYNAMEDataGridViewTextBoxColumn.HeaderText = "FACULTY_NAME";
-            this.fACULTYNAMEDataGridViewTextBoxColumn.Name = "fACULTYNAMEDataGridViewTextBoxColumn";
-            this.fACULTYNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cOURSECODEDataGridViewTextBoxColumn
-            // 
-            this.cOURSECODEDataGridViewTextBoxColumn.DataPropertyName = "COURSE_CODE";
-            this.cOURSECODEDataGridViewTextBoxColumn.HeaderText = "COURSE_CODE";
-            this.cOURSECODEDataGridViewTextBoxColumn.Name = "cOURSECODEDataGridViewTextBoxColumn";
-            this.cOURSECODEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gROUPNUMBERDataGridViewTextBoxColumn
-            // 
-            this.gROUPNUMBERDataGridViewTextBoxColumn.DataPropertyName = "GROUP_NUMBER";
-            this.gROUPNUMBERDataGridViewTextBoxColumn.HeaderText = "GROUP_NUMBER";
-            this.gROUPNUMBERDataGridViewTextBoxColumn.Name = "gROUPNUMBERDataGridViewTextBoxColumn";
-            this.gROUPNUMBERDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bUILDINGDataGridViewTextBoxColumn
-            // 
-            this.bUILDINGDataGridViewTextBoxColumn.DataPropertyName = "BUILDING";
-            this.bUILDINGDataGridViewTextBoxColumn.HeaderText = "BUILDING";
-            this.bUILDINGDataGridViewTextBoxColumn.Name = "bUILDINGDataGridViewTextBoxColumn";
-            this.bUILDINGDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // aUDITORIUMNUMBERDataGridViewTextBoxColumn
-            // 
-            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn.DataPropertyName = "AUDITORIUM_NUMBER";
-            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn.HeaderText = "AUDITORIUM_NUMBER";
-            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn.Name = "aUDITORIUMNUMBERDataGridViewTextBoxColumn";
-            this.aUDITORIUMNUMBERDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wEEKNUMBERDataGridViewTextBoxColumn
-            // 
-            this.wEEKNUMBERDataGridViewTextBoxColumn.DataPropertyName = "WEEK_NUMBER";
-            this.wEEKNUMBERDataGridViewTextBoxColumn.HeaderText = "WEEK_NUMBER";
-            this.wEEKNUMBERDataGridViewTextBoxColumn.Name = "wEEKNUMBERDataGridViewTextBoxColumn";
-            this.wEEKNUMBERDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wEEKDAYNAMEDataGridViewTextBoxColumn
-            // 
-            this.wEEKDAYNAMEDataGridViewTextBoxColumn.DataPropertyName = "WEEKDAY_NAME";
-            this.wEEKDAYNAMEDataGridViewTextBoxColumn.HeaderText = "WEEKDAY_NAME";
-            this.wEEKDAYNAMEDataGridViewTextBoxColumn.Name = "wEEKDAYNAMEDataGridViewTextBoxColumn";
-            this.wEEKDAYNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tEACHERNAMEDataGridViewTextBoxColumn
-            // 
-            this.tEACHERNAMEDataGridViewTextBoxColumn.DataPropertyName = "TEACHER_NAME";
-            this.tEACHERNAMEDataGridViewTextBoxColumn.HeaderText = "TEACHER_NAME";
-            this.tEACHERNAMEDataGridViewTextBoxColumn.Name = "tEACHERNAMEDataGridViewTextBoxColumn";
-            this.tEACHERNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dISCIPLINENAMEDataGridViewTextBoxColumn
-            // 
-            this.dISCIPLINENAMEDataGridViewTextBoxColumn.DataPropertyName = "DISCIPLINE_NAME";
-            this.dISCIPLINENAMEDataGridViewTextBoxColumn.HeaderText = "DISCIPLINE_NAME";
-            this.dISCIPLINENAMEDataGridViewTextBoxColumn.Name = "dISCIPLINENAMEDataGridViewTextBoxColumn";
-            this.dISCIPLINENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // aCTIVITYTYPENAMEDataGridViewTextBoxColumn
-            // 
-            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn.DataPropertyName = "ACTIVITY_TYPE_NAME";
-            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn.HeaderText = "ACTIVITY_TYPE_NAME";
-            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn.Name = "aCTIVITYTYPENAMEDataGridViewTextBoxColumn";
-            this.aCTIVITYTYPENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tIMESTARTDataGridViewTextBoxColumn
-            // 
-            this.tIMESTARTDataGridViewTextBoxColumn.DataPropertyName = "TIME_START";
-            this.tIMESTARTDataGridViewTextBoxColumn.HeaderText = "TIME_START";
-            this.tIMESTARTDataGridViewTextBoxColumn.Name = "tIMESTARTDataGridViewTextBoxColumn";
-            this.tIMESTARTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tIMEENDDataGridViewTextBoxColumn
-            // 
-            this.tIMEENDDataGridViewTextBoxColumn.DataPropertyName = "TIME_END";
-            this.tIMEENDDataGridViewTextBoxColumn.HeaderText = "TIME_END";
-            this.tIMEENDDataGridViewTextBoxColumn.Name = "tIMEENDDataGridViewTextBoxColumn";
-            this.tIMEENDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // CROSSES
-            // 
-            this.CROSSES.DataPropertyName = "CROSSES";
-            this.CROSSES.HeaderText = "CROSSES";
-            this.CROSSES.Name = "CROSSES";
-            this.CROSSES.ReadOnly = true;
-            // 
-            // TYPE_TIME_START
-            // 
-            this.TYPE_TIME_START.DataPropertyName = "TYPE_TIME_START";
-            this.TYPE_TIME_START.HeaderText = "TYPE_TIME_START";
-            this.TYPE_TIME_START.Name = "TYPE_TIME_START";
-            this.TYPE_TIME_START.ReadOnly = true;
-            // 
-            // TYPE_TIME_END
-            // 
-            this.TYPE_TIME_END.DataPropertyName = "TYPE_TIME_END";
-            this.TYPE_TIME_END.HeaderText = "TYPE_TIME_END";
-            this.TYPE_TIME_END.Name = "TYPE_TIME_END";
-            this.TYPE_TIME_END.ReadOnly = true;
             // 
             // Main
             // 
@@ -1198,6 +1207,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet37)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet25)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -1227,8 +1238,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet36)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableViewBindingSource6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1359,5 +1368,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CROSSES;
         private System.Windows.Forms.DataGridViewTextBoxColumn TYPE_TIME_START;
         private System.Windows.Forms.DataGridViewTextBoxColumn TYPE_TIME_END;
+        private System.Windows.Forms.ToolStripMenuItem сменитьПарольToolStripMenuItem;
     }
 }

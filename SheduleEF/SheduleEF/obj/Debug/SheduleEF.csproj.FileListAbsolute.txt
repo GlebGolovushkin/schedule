@@ -57,3 +57,4 @@ C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Admin.ff-MR.resources
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.Admin.ja.resources
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\ff-MR\SheduleEF.resources.dll
 C:\Schedule\SheduleEF\SheduleEF\obj\Debug\ja\SheduleEF.resources.dll
+C:\Schedule\SheduleEF\SheduleEF\obj\Debug\SheduleEF.ChangingPass.resources

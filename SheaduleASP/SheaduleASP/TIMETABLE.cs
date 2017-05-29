@@ -25,6 +25,7 @@ namespace SheaduleASP
         public Nullable<int> WEEK_NUMBER { get; set; }
         public Nullable<int> TIME_CODE { get; set; }
         public Nullable<int> CROSSES { get; set; }
+        public Nullable<int> TYPE_CODE { get; set; }
     
         public virtual ACTIVITY ACTIVITY { get; set; }
         public virtual AUDITORIUM AUDITORIUM { get; set; }
@@ -32,6 +33,7 @@ namespace SheaduleASP
         public virtual GROUPS GROUPS { get; set; }
         public virtual TEACHER TEACHER { get; set; }
         public virtual TIME TIME { get; set; }
+        public virtual TYPE TYPE { get; set; }
         public virtual WEEKDAY WEEKDAY { get; set; }
     }
 }

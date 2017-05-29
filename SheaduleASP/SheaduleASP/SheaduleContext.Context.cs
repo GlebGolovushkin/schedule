@@ -34,6 +34,8 @@ namespace SheaduleASP
         public virtual DbSet<TEACHER> TEACHER { get; set; }
         public virtual DbSet<TIME> TIME { get; set; }
         public virtual DbSet<TIMETABLE> TIMETABLE { get; set; }
+        public virtual DbSet<TYPE> TYPE { get; set; }
         public virtual DbSet<WEEKDAY> WEEKDAY { get; set; }
+        public virtual DbSet<TimeTableView> TimeTableView { get; set; }
     }
 }

@@ -84,6 +84,12 @@
     <Compile Include="AUDITORIUM.cs">
       <DependentUpon>Shed.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChangingPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangingPass.Designer.cs">
+      <DependentUpon>ChangingPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="DISCIPLINE.cs">
       <DependentUpon>Shed.tt</DependentUpon>
     </Compile>
@@ -275,10 +281,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SheaduleDataSet37.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SheaduleDataSet38.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet38.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SheaduleDataSet39.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet39.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SheaduleDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SheaduleDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SheaduleDataSet40.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet40.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SheaduleDataSet41.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SheaduleDataSet41.xsd</DependentUpon>
     </Compile>
     <Compile Include="SheaduleDataSet5.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -368,6 +394,9 @@
     <Compile Include="TIMETABLE.cs">
       <DependentUpon>Shed.tt</DependentUpon>
     </Compile>
+    <Compile Include="TimeTableView.cs">
+      <DependentUpon>Shed.tt</DependentUpon>
+    </Compile>
     <Compile Include="TYPE.cs">
       <DependentUpon>Shed.tt</DependentUpon>
     </Compile>
@@ -385,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Auditor.resx">
       <DependentUpon>Auditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangingPass.resx">
+      <DependentUpon>ChangingPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisciplineAdd.resx">
       <DependentUpon>DisciplineAdd.cs</DependentUpon>
@@ -785,6 +817,28 @@
     <None Include="SheaduleDataSet37.xss">
       <DependentUpon>SheaduleDataSet37.xsd</DependentUpon>
     </None>
+    <None Include="SheaduleDataSet38.xsc">
+      <DependentUpon>SheaduleDataSet38.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet38.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet38.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet38.xss">
+      <DependentUpon>SheaduleDataSet38.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet39.xsc">
+      <DependentUpon>SheaduleDataSet39.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet39.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet39.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet39.xss">
+      <DependentUpon>SheaduleDataSet39.xsd</DependentUpon>
+    </None>
     <None Include="SheaduleDataSet4.xsc">
       <DependentUpon>SheaduleDataSet4.xsd</DependentUpon>
     </None>
@@ -795,6 +849,28 @@
     </None>
     <None Include="SheaduleDataSet4.xss">
       <DependentUpon>SheaduleDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet40.xsc">
+      <DependentUpon>SheaduleDataSet40.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet40.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet40.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet40.xss">
+      <DependentUpon>SheaduleDataSet40.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet41.xsc">
+      <DependentUpon>SheaduleDataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="SheaduleDataSet41.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SheaduleDataSet41.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SheaduleDataSet41.xss">
+      <DependentUpon>SheaduleDataSet41.xsd</DependentUpon>
     </None>
     <None Include="SheaduleDataSet5.xsc">
       <DependentUpon>SheaduleDataSet5.xsd</DependentUpon>
@@ -1104,6 +1180,7 @@
       <DependentUpon>Shed.edmx</DependentUpon>
       <LastGenOutput>Shed.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Shed.edmx.sql" />
     <Content Include="Shed.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Shed.edmx</DependentUpon>

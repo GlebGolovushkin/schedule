@@ -40,6 +40,10 @@ namespace SheduleEF
 
         private void TascAdd_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet40.ACTIVITY". При необходимости она может быть перемещена или удалена.
+            this.aCTIVITYTableAdapter3.Fill(this.sheaduleDataSet40.ACTIVITY);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet39.ACTIVITY". При необходимости она может быть перемещена или удалена.
+            this.aCTIVITYTableAdapter2.Fill(this.sheaduleDataSet39.ACTIVITY);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet22.ACTIVITY". При необходимости она может быть перемещена или удалена.
             this.aCTIVITYTableAdapter1.Fill(this.sheaduleDataSet22.ACTIVITY);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet21.AUDITORIUM". При необходимости она может быть перемещена или удалена.

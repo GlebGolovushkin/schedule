@@ -9,46 +9,46 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Занятия</title>
+    <title>Расписание</title>
 </head>
 <body>
     <p>
-        @Html.ActionLink("Добавить новое", "Create")
+        @Html.ActionLink("Создать", "Create")
     </p>
     <table class="table">
         <tr>
             <th>
-                <p>Курс</p>
+                Курс
             </th>
             <th>
-                <p>Номер недели</p>
+                Номер недели
             </th>
             <th>
-                <p>Кресты</p>
+                Количество крестов
             </th>
             <th>
-                <p>Вид</p>
+                Вид занятия
             </th>
             <th>
-                <p>Здание</p>
+                Здание
             </th>
             <th>
-                <p>Аудитория</p>
+                Название дсциплины
             </th>
             <th>
-                <p>Дисуиплина</p>
+                Группа
             </th>
             <th>
-                <p>Группа</p>
+                Преподаватель
             </th>
             <th>
-                <p>Преподаватель</p>
+                Время начала
             </th>
             <th>
-                <p>Время начала</p>
+                Расписание
             </th>
             <th>
-                <p>День недели</p>
+                День недели
             </th>
             <th></th>
         </tr>
@@ -71,9 +71,6 @@
                 @Html.DisplayFor(modelItem => item.AUDITORIUM.BUILDING)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AUDITORIUM.AUDITORIUM_NUMBER)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.DISCIPLINE.DISCIPLINE_NAME)
             </td>
             <td>
@@ -84,6 +81,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TIME.TIME_START)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TYPE.TYPE_NAME)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WEEKDAY.WEEKDAY_NAME)

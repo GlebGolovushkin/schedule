@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9b3fbfb577c0419bb721f30d0978e057" Name="Diagram1">
+      <Diagram DiagramId="8aba2ba76e16492aa2f0be099e193df1" Name="Diagram1">
         <EntityTypeShape EntityType="SheaduleModel.ACTIVITY" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SheaduleModel.AUDITORIUM" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SheaduleModel.DISCIPLINE" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
@@ -16,6 +16,7 @@
         <EntityTypeShape EntityType="SheaduleModel.TIMETABLE" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SheaduleModel.TYPE" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SheaduleModel.WEEKDAY" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.TimeTableView" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_ACTIVITY" ManuallyRouted="false" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_AUDITORIUM" ManuallyRouted="false" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_DISCIPLINE" ManuallyRouted="false" />

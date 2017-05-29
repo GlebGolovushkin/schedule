@@ -115,6 +115,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.Schedule = new System.Windows.Forms.ComboBox();
+            this.sheaduleDataSet39 = new SheduleEF.SheaduleDataSet39();
+            this.aCTIVITYBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.aCTIVITYTableAdapter2 = new SheduleEF.SheaduleDataSet39TableAdapters.ACTIVITYTableAdapter();
+            this.sheaduleDataSet40 = new SheduleEF.SheaduleDataSet40();
+            this.aCTIVITYBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.aCTIVITYTableAdapter3 = new SheduleEF.SheaduleDataSet40TableAdapters.ACTIVITYTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource)).BeginInit();
@@ -157,11 +163,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDITORIUMBindingSource11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet39)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet40)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // Activity
             // 
-            this.Activity.DataSource = this.aCTIVITYBindingSource1;
+            this.Activity.DataSource = this.aCTIVITYBindingSource3;
             this.Activity.DisplayMember = "ACTIVITY_TYPE_NAME";
             this.Activity.FormattingEnabled = true;
             this.Activity.Location = new System.Drawing.Point(12, 33);
@@ -683,6 +693,34 @@
             this.Schedule.TabIndex = 31;
             this.Schedule.ValueMember = "TYPE_NAME";
             // 
+            // sheaduleDataSet39
+            // 
+            this.sheaduleDataSet39.DataSetName = "SheaduleDataSet39";
+            this.sheaduleDataSet39.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aCTIVITYBindingSource2
+            // 
+            this.aCTIVITYBindingSource2.DataMember = "ACTIVITY";
+            this.aCTIVITYBindingSource2.DataSource = this.sheaduleDataSet39;
+            // 
+            // aCTIVITYTableAdapter2
+            // 
+            this.aCTIVITYTableAdapter2.ClearBeforeFill = true;
+            // 
+            // sheaduleDataSet40
+            // 
+            this.sheaduleDataSet40.DataSetName = "SheaduleDataSet40";
+            this.sheaduleDataSet40.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aCTIVITYBindingSource3
+            // 
+            this.aCTIVITYBindingSource3.DataMember = "ACTIVITY";
+            this.aCTIVITYBindingSource3.DataSource = this.sheaduleDataSet40;
+            // 
+            // aCTIVITYTableAdapter3
+            // 
+            this.aCTIVITYTableAdapter3.ClearBeforeFill = true;
+            // 
             // TascAddAud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,6 +793,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUDITORIUMBindingSource11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet39)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sheaduleDataSet40)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCTIVITYBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -847,5 +889,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox Schedule;
+        private SheaduleDataSet39 sheaduleDataSet39;
+        private System.Windows.Forms.BindingSource aCTIVITYBindingSource2;
+        private SheaduleDataSet39TableAdapters.ACTIVITYTableAdapter aCTIVITYTableAdapter2;
+        private SheaduleDataSet40 sheaduleDataSet40;
+        private System.Windows.Forms.BindingSource aCTIVITYBindingSource3;
+        private SheaduleDataSet40TableAdapters.ACTIVITYTableAdapter aCTIVITYTableAdapter3;
     }
 }

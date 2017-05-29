@@ -3,6 +3,7 @@ using System.EnterpriseServices;
 using System.Linq;
 using System.Web.Mvc;
 using SheaduleASP.Models;
+using System;
 
 namespace SheaduleASP.Controllers
 {
@@ -44,6 +45,9 @@ namespace SheaduleASP.Controllers
             IEnumerable<TIME> times = db.TIME;
             ViewBag.Times = times;
 
+            IEnumerable<TYPE> types = db.TYPE;
+            ViewBag.Types = types;
+
             IEnumerable<TIMETABLE> timetables = db.TIMETABLE;
             ViewBag.TimeTable = timetables;
 
@@ -66,6 +70,9 @@ namespace SheaduleASP.Controllers
             string crosses;
             string faculty;
             string building;
+            DateTime? typeStart;
+            DateTime? typeEnd;
+            DateTime now = DateTime.Today;
             const string headColor = "bgcolor =\"#F8F8F8\"";
 
             foreach (var timetable in timetables)
@@ -84,7 +91,9 @@ namespace SheaduleASP.Controllers
                 auditorium = auditoriums.First(sss => sss.AUDITORIUM_CODE == (int) timetable.AUDITORIUM_CODE)
                     .AUDITORIUM_NUMBER;
                 weekNumber = timetable.WEEK_NUMBER.ToString();
-                time = times.First(sss => sss.TIME_CODE == (int) timetable.TIME_CODE).TIME_START;
+                time = times.First(sss => sss.TIME_CODE == (int)timetable.TIME_CODE).TIME_START;
+                typeStart = types.First(sss => sss.TYPE_CODE == (int)timetable.TYPE_CODE).TYPE_TIME_START;
+                typeEnd = types.First(sss => sss.TYPE_CODE == (int)timetable.TYPE_CODE).TYPE_TIME_END;
                 crosses = timetable.CROSSES.ToString();
                 faculty = faculties.First(sss => sss.FACULTY_CODE ==
                                                  (int) groups.First(aaa => aaa.GROUP_CODE == (int) timetable.GROUP_CODE)
@@ -92,7 +101,7 @@ namespace SheaduleASP.Controllers
                     .FACULTY_NAME;
 
                 lessons.Add(new Lesson(weekDay, course, group, teacher, discipline, activityType, auditorium,
-                    weekNumber, time, crosses, faculty, weekDayNumber, timeNumber, building));
+                    weekNumber, time, crosses, faculty, weekDayNumber, timeNumber, building, typeStart, typeEnd));
             }
             var main = "";
             var shedule = new string[7, 15];
@@ -122,24 +131,26 @@ namespace SheaduleASP.Controllers
                         else wek = 8;
 
                         if (lesson.group == Group && lesson.course == Cource && lesson.crosses == Crosses &&
-                            lesson.faculty == Faculty)
+                            lesson.faculty == Faculty && lesson.start.Value.Date < now.Date && lesson.end.Value.Date > now.Date)
+                        {
                             shedule[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] =
                                 lesson.discipline + " " + lesson.teacher + " " + lesson.building + lesson.auditorium;
-                        if (lesson.activityType== "Лекция")
-                        { 
-                           color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 1;
-                        }
-                        else if (lesson.activityType == "Семинар")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 2;
-                        }
-                        else if (lesson.activityType == "Физическое воспитание")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 3;
-                        }
-                        else if (lesson.activityType == "Лабараторная")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 4;
+                            if (lesson.activityType == "Лекция")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 1;
+                            }
+                            else if (lesson.activityType == "Семинар")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 2;
+                            }
+                            else if (lesson.activityType == "Физическое воспитание")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 3;
+                            }
+                            else if (lesson.activityType == "Лабараторная")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 4;
+                            }
                         }
                     }
                     main += "<table border='10' bordercolor='#d3d3d3' cellpadding='10'>";
@@ -199,24 +210,26 @@ namespace SheaduleASP.Controllers
                             wek = 0;
                         else wek = 7;
 
-                        if (lesson.teacher == Teacher)
+                        if (lesson.teacher == Teacher && lesson.start.Value.Date < now.Date && lesson.end.Value.Date > now.Date)
                             shedule[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] =
                                 lesson.discipline + " " + lesson.building + lesson.auditorium;
-                        if (lesson.activityType == "Лекция")
                         {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 1;
-                        }
-                        else if (lesson.activityType == "Семинар")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 2;
-                        }
-                        else if (lesson.activityType == "Физическое воспитание")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 3;
-                        }
-                        else if (lesson.activityType == "Лабараторная")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 4;
+                            if (lesson.activityType == "Лекция")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 1;
+                            }
+                            else if (lesson.activityType == "Семинар")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 2;
+                            }
+                            else if (lesson.activityType == "Физическое воспитание")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 3;
+                            }
+                            else if (lesson.activityType == "Лабараторная")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 4;
+                            }
                         }
                     }
                     main += "<table border='10' bordercolor='#d3d3d3' cellpadding='10'>";
@@ -279,24 +292,26 @@ namespace SheaduleASP.Controllers
                             wek = 0;
                         else wek = 7;
 
-                        if (lesson.auditorium == Auditor)
+                        if (lesson.auditorium == Auditor && lesson.start.Value.Date < now.Date && lesson.end.Value.Date > now.Date)
+                        {
                             shedule[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] =
                                 lesson.discipline + " " + lesson.teacher + " " + lesson.building + lesson.auditorium;
-                        if (lesson.activityType == "Лекция")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 1;
-                        }
-                        else if (lesson.activityType == "Семинар")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 2;
-                        }
-                        else if (lesson.activityType == "Физическое воспитание")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 3;
-                        }
-                        else if (lesson.activityType == "Лабараторная")
-                        {
-                            color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 4;
+                            if (lesson.activityType == "Лекция")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 1;
+                            }
+                            else if (lesson.activityType == "Семинар")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 2;
+                            }
+                            else if (lesson.activityType == "Физическое воспитание")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 3;
+                            }
+                            else if (lesson.activityType == "Лабараторная")
+                            {
+                                color[lesson.weekDayNumber - 1, lesson.timeNumber + wek - 1] = 4;
+                            }
                         }
                     }
                     main += "<table border='10' bordercolor='#d3d3d3' cellpadding='10'>";

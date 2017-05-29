@@ -176,7 +176,7 @@ namespace SheduleEF
             Color activityColor = new Color();
             for (int i = 0; i <= dataGridView1.RowCount - 1; i++)
             {
-                if (dataGridView1.Rows[i].Cells[2].Value.ToString() == group && dataGridView1.Rows[i].Cells[1].Value.ToString() == course && Convert.ToInt32(dataGridView3.Rows[i].Cells[12].Value.ToString()) == crosses && Convert.ToDateTime(dataGridView1.Rows[i].Cells[13].Value.ToString()).Date < dateOnly && Convert.ToDateTime(dataGridView1.Rows[i].Cells[14].Value.ToString()).Date > dateOnly)
+                if (dataGridView1.Rows[i].Cells[2].Value.ToString() == group && dataGridView1.Rows[i].Cells[1].Value.ToString() == course && Convert.ToInt32(dataGridView1.Rows[i].Cells[12].Value.ToString()) == crosses && Convert.ToDateTime(dataGridView1.Rows[i].Cells[13].Value.ToString()).Date < dateOnly && Convert.ToDateTime(dataGridView1.Rows[i].Cells[14].Value.ToString()).Date > dateOnly)
                 {
                     if (dataGridView1.Rows[i].Cells[5].Value.ToString() == "2")
                         week = 8;
@@ -939,7 +939,7 @@ namespace SheduleEF
             SaveFileDialog fd = new SaveFileDialog();
             fd.Filter = "jpg|*.jpg";
             fd.Title = "Save an Image File";
-            Bitmap bmp = new Bitmap(dataGridView2.Size.Width + 10, dataGridView2.Size.Height + 30);
+            Bitmap bmp = new Bitmap(dataGridView2.Size.Width + 30, dataGridView2.Size.Height + 100);
             dataGridView2.DrawToBitmap(bmp, dataGridView2.Bounds);
             if (fd.ShowDialog() == DialogResult.OK)
             {
@@ -1185,6 +1185,12 @@ namespace SheduleEF
 
             ExcelApp.Visible = true;
 
+        }
+
+        private void сменитьПарольToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangingPass cp = new ChangingPass();
+            cp.ShowDialog();
         }
 
         private void администраторToolStripMenuItem_Click(object sender, EventArgs e)

@@ -33,7 +33,7 @@ namespace SheduleEF
                 Building.DropDownStyle =
                         Auditor.DropDownStyle =
                             Discipline.DropDownStyle =
-                                    Teacher.DropDownStyle = ComboBoxStyle.DropDownList;
+                                    Teacher.DropDownStyle =  Schedule.DropDownStyle = ComboBoxStyle.DropDownList;
             Building.Text = "Б";
             AddList.SelectedIndex = 0;
             TascAdd_Load(null, null);
@@ -42,6 +42,10 @@ namespace SheduleEF
 
         private void TascAdd_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet41.ACTIVITY". При необходимости она может быть перемещена или удалена.
+            this.aCTIVITYTableAdapter2.Fill(this.sheaduleDataSet41.ACTIVITY);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet38.TYPE". При необходимости она может быть перемещена или удалена.
+            this.tYPETableAdapter1.Fill(this.sheaduleDataSet38.TYPE);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet34.TYPE". При необходимости она может быть перемещена или удалена.
             this.tYPETableAdapter.Fill(this.sheaduleDataSet34.TYPE);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "sheaduleDataSet22.ACTIVITY". При необходимости она может быть перемещена или удалена.

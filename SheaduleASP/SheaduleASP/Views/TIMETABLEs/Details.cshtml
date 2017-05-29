@@ -13,103 +13,102 @@
 </head>
 <body>
     <div>
-        <h4>Занятие</h4>
+        <h4>Расписание</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                <p>Курс</p>
+                Курс
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.COURSE_CODE)
             </dd>
-
+    
             <dt>
-                <p>День недели</p>
+                Номер недели
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.WEEK_NUMBER)
             </dd>
-
+    
             <dt>
-                <p>Кресты</p>
+                Количество крестов
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.CROSSES)
             </dd>
-
+    
             <dt>
-                <p>Вид</p>
+                Вид
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.ACTIVITY.ACTIVITY_TYPE_NAME)
             </dd>
-
+    
             <dt>
-                <p>Здание</p>
+                Здание
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.AUDITORIUM.BUILDING)
             </dd>
-
+    
             <dt>
-                <p>Аудитория</p>
+                Предмет
             </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.AUDITORIUM.AUDITORIUM_NUMBER)
-            </dd>
-
-            <dt>
-                <p>Дисциплина</p>
-            </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.DISCIPLINE.DISCIPLINE_NAME)
             </dd>
-
+    
             <dt>
-                <p>Группа</p>
+                Группа
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.GROUPS.GROUP_NUMBER)
             </dd>
-
+    
             <dt>
-                <p>Преподаватель</p>
+                Преподаватель
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.TEACHER.TEACHER_NAME)
             </dd>
-
+    
             <dt>
-                <p>Время начала</p>
+                Время начала
             </dt>
-
+    
             <dd>
                 @Html.DisplayFor(model => model.TIME.TIME_START)
             </dd>
-
+    
             <dt>
-                <p>День недели</p>
+                Расписание
             </dt>
-
+    
+            <dd>
+                @Html.DisplayFor(model => model.TYPE.TYPE_NAME)
+            </dd>
+    
+            <dt>
+                День недели
+            </dt>
+    
             <dd>
                 @Html.DisplayFor(model => model.WEEKDAY.WEEKDAY_NAME)
             </dd>
-
-        </dl>
     
+        </dl>
     </div>
     <p>
         @Html.ActionLink("Редактировать", "Edit", new { id = Model.LESSON_CODE }) |
-        @Html.ActionLink("Вернуться к занятиям", "Index")
+        @Html.ActionLink("Назад", "Index")
     </p>
 </body>
 </html>

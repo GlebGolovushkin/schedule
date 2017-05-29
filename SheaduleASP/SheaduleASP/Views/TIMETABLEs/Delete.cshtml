@@ -12,13 +12,13 @@
     <title>Удаление</title>
 </head>
 <body>
-    <h3>Вы уверены что хотите удалить</h3>
+    <h3>Вы уверены что хотите удалить?</h3>
     <div>
-        <h4>Занятие</h4>
+        <h4>Расписание</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                <p>Курс</p>
+                Курс
             </dt>
     
             <dd>
@@ -26,7 +26,7 @@
             </dd>
     
             <dt>
-                <p>День недели</p>
+                Номер недели
             </dt>
     
             <dd>
@@ -34,7 +34,7 @@
             </dd>
     
             <dt>
-                <p>Кресты</p>
+                Количество крестов
             </dt>
     
             <dd>
@@ -42,7 +42,7 @@
             </dd>
     
             <dt>
-                <p>Вид</p>
+                Вид
             </dt>
     
             <dd>
@@ -50,7 +50,7 @@
             </dd>
     
             <dt>
-                <p>Здание</p>
+                Здание
             </dt>
     
             <dd>
@@ -58,15 +58,7 @@
             </dd>
     
             <dt>
-                <p>Аудитория</p>
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.AUDITORIUM.AUDITORIUM_NUMBER)
-            </dd>
-    
-            <dt>
-                <p>Дисциплина</p>
+                Предмет
             </dt>
     
             <dd>
@@ -74,7 +66,7 @@
             </dd>
     
             <dt>
-                <p>Группа</p>
+                Группа
             </dt>
     
             <dd>
@@ -82,7 +74,7 @@
             </dd>
     
             <dt>
-                <p>Преподаватель</p>
+                Преподаватель
             </dt>
     
             <dd>
@@ -90,7 +82,7 @@
             </dd>
     
             <dt>
-                <p>Время начала</p>
+                Время начала
             </dt>
     
             <dd>
@@ -98,7 +90,15 @@
             </dd>
     
             <dt>
-                <p>День недели</p>
+                Расписание
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TYPE.TYPE_NAME)
+            </dd>
+    
+            <dt>
+                Дени недели
             </dt>
     
             <dd>
@@ -111,8 +111,8 @@
             @Html.AntiForgeryToken()
     
             <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Вернуться к занятиям", "Index")
+                <input type="submit" value="Удалить" class="btn btn-default" /> |
+                @Html.ActionLink("Вернуться", "Index")
             </div>
         }
     </div>

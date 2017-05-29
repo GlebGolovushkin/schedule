@@ -86,6 +86,17 @@
           <ScalarProperty Name="WEEK_NUMBER" ColumnName="WEEK_NUMBER" />
           <ScalarProperty Name="TIME_CODE" ColumnName="TIME_CODE" />
           <ScalarProperty Name="CROSSES" ColumnName="CROSSES" />
+          <ScalarProperty Name="TYPE_CODE" ColumnName="TYPE_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPE">
+      <EntityTypeMapping TypeName="SheaduleModel.TYPE">
+        <MappingFragment StoreEntitySet="TYPE">
+          <ScalarProperty Name="TYPE_CODE" ColumnName="TYPE_CODE" />
+          <ScalarProperty Name="TYPE_NAME" ColumnName="TYPE_NAME" />
+          <ScalarProperty Name="TYPE_TIME_START" ColumnName="TYPE_TIME_START" />
+          <ScalarProperty Name="TYPE_TIME_END" ColumnName="TYPE_TIME_END" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -94,6 +105,28 @@
         <MappingFragment StoreEntitySet="WEEKDAY">
           <ScalarProperty Name="WEEKDAY_CODE" ColumnName="WEEKDAY_CODE" />
           <ScalarProperty Name="WEEKDAY_NAME" ColumnName="WEEKDAY_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeTableView">
+      <EntityTypeMapping TypeName="SheaduleModel.TimeTableView">
+        <MappingFragment StoreEntitySet="TimeTableView">
+          <ScalarProperty Name="FACULTY_NAME" ColumnName="FACULTY_NAME" />
+          <ScalarProperty Name="COURSE_CODE" ColumnName="COURSE_CODE" />
+          <ScalarProperty Name="GROUP_NUMBER" ColumnName="GROUP_NUMBER" />
+          <ScalarProperty Name="BUILDING" ColumnName="BUILDING" />
+          <ScalarProperty Name="AUDITORIUM_NUMBER" ColumnName="AUDITORIUM_NUMBER" />
+          <ScalarProperty Name="WEEK_NUMBER" ColumnName="WEEK_NUMBER" />
+          <ScalarProperty Name="WEEKDAY_NAME" ColumnName="WEEKDAY_NAME" />
+          <ScalarProperty Name="TEACHER_NAME" ColumnName="TEACHER_NAME" />
+          <ScalarProperty Name="DISCIPLINE_NAME" ColumnName="DISCIPLINE_NAME" />
+          <ScalarProperty Name="ACTIVITY_TYPE_NAME" ColumnName="ACTIVITY_TYPE_NAME" />
+          <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+          <ScalarProperty Name="TIME_END" ColumnName="TIME_END" />
+          <ScalarProperty Name="CROSSES" ColumnName="CROSSES" />
+          <ScalarProperty Name="TYPE_TIME_START" ColumnName="TYPE_TIME_START" />
+          <ScalarProperty Name="TYPE_TIME_END" ColumnName="TYPE_TIME_END" />
+          <ScalarProperty Name="TYPE_NAME" ColumnName="TYPE_NAME" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

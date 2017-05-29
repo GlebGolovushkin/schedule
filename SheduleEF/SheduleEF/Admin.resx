@@ -149,6 +149,9 @@
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 46</value>
   </data>
+  <data name="textBox1.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 20</value>
   </data>

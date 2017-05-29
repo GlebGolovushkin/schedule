@@ -102,8 +102,8 @@
     </Key>
     <Property Name="TYPE_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TYPE_NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="TYPE_TIME_START" Type="DateTime" Precision="0" />
-    <Property Name="TYPE_TIME_END" Type="DateTime" Precision="0" />
+    <Property Name="TYPE_TIME_START" Type="DateTime" Precision="3" />
+    <Property Name="TYPE_TIME_END" Type="DateTime" Precision="3" />
     <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_TYPE" FromRole="TYPE" ToRole="TIMETABLE" />
   </EntityType>
   <EntityType Name="WEEKDAY">
@@ -113,6 +113,27 @@
     <Property Name="WEEKDAY_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="WEEKDAY_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TIMETABLE" Relationship="Self.FK_TIMETABLE_WEEKDAY" FromRole="WEEKDAY" ToRole="TIMETABLE" />
+  </EntityType>
+  <EntityType Name="TimeTableView">
+    <Key>
+      <PropertyRef Name="TYPE_NAME" />
+    </Key>
+    <Property Name="FACULTY_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="COURSE_CODE" Type="Int32" />
+    <Property Name="GROUP_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BUILDING" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AUDITORIUM_NUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="WEEK_NUMBER" Type="Int32" />
+    <Property Name="WEEKDAY_NAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TEACHER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DISCIPLINE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIVITY_TYPE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_START" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TIME_END" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CROSSES" Type="Int32" />
+    <Property Name="TYPE_TIME_START" Type="DateTime" Precision="3" />
+    <Property Name="TYPE_TIME_END" Type="DateTime" Precision="3" />
+    <Property Name="TYPE_NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
   </EntityType>
   <Association Name="FK_TIMETABLE_ACTIVITY">
     <End Role="ACTIVITY" Type="Self.ACTIVITY" Multiplicity="0..1" />
@@ -234,6 +255,7 @@
     <EntitySet Name="TIMETABLE" EntityType="Self.TIMETABLE" />
     <EntitySet Name="TYPE" EntityType="Self.TYPE" />
     <EntitySet Name="WEEKDAY" EntityType="Self.WEEKDAY" />
+    <EntitySet Name="TimeTableView" EntityType="Self.TimeTableView" />
     <AssociationSet Name="FK_TIMETABLE_ACTIVITY" Association="Self.FK_TIMETABLE_ACTIVITY">
       <End Role="ACTIVITY" EntitySet="ACTIVITY" />
       <End Role="TIMETABLE" EntitySet="TIMETABLE" />

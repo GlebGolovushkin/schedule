@@ -1,4 +1,6 @@
-﻿namespace SheaduleASP.Models
+﻿using System;
+
+namespace SheaduleASP.Models
 {
     public class Lesson
     {
@@ -18,9 +20,12 @@
         public int weekDayNumber;
         public string weekNumber;
 
+        public DateTime? start;
+        public DateTime? end;
+
         public Lesson(string WeekDay, string Course, string Group, string Teacher, string Discipline,
             string ActivityType, string Auditorium, string WeekNumber, string Time, string Crosses, string Faculty,
-            int TimeNumber, int WeekDayNumber, string Building)
+            int TimeNumber, int WeekDayNumber, string Building, DateTime? Start, DateTime? End)
         {
             weekDay = WeekDay;
             course = Course;
@@ -36,6 +41,8 @@
             weekDayNumber = WeekDayNumber;
             timeNumber = TimeNumber;
             building = Building;
+            start = Start;
+            end = End;
         }
     }
 }

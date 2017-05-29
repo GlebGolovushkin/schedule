@@ -4,17 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="44d71bea3c6449a7b8e4245eb5b047c1" Name="Diagram1">
-        <EntityTypeShape EntityType="SheaduleModel.ACTIVITY" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SheaduleModel.AUDITORIUM" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="SheaduleModel.DISCIPLINE" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SheaduleModel.FACULTY" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SheaduleModel.GROUPS" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+      <Diagram DiagramId="2416920edea6430a861c9bad4ac78e95" Name="Diagram1">
+        <EntityTypeShape EntityType="SheaduleModel.ACTIVITY" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.AUDITORIUM" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.DISCIPLINE" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.FACULTY" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.GROUPS" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SheaduleModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SheaduleModel.TEACHER" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="SheaduleModel.TIME" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SheaduleModel.TIMETABLE" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SheaduleModel.WEEKDAY" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.TEACHER" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.TIME" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.TIMETABLE" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.TYPE" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.WEEKDAY" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SheaduleModel.TimeTableView" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_ACTIVITY" ManuallyRouted="false" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_AUDITORIUM" ManuallyRouted="false" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_DISCIPLINE" ManuallyRouted="false" />
@@ -22,6 +24,7 @@
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_GROUPS" ManuallyRouted="false" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_TEACHER" ManuallyRouted="false" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_TIME" ManuallyRouted="false" />
+        <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_TYPE" ManuallyRouted="false" />
         <AssociationConnector Association="SheaduleModel.FK_TIMETABLE_WEEKDAY" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
